@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .ubication {
+    font-family: "Font Awesome 5 Free";
+    content: "\f3c5";
+    display: inline-block;
+    font-weight: 900;
+  }
+  .mobile {
+    font-family: "Font Awesome 5 Free";
+    content: "\f10b";
+    display: inline-block;
+    font-weight: 900;
+  }
+  .phone {
+    font-family: "Font Awesome 5 Free";
+    content: "\f095";
+    display: inline-block;
+    font-weight: 900;
+  }
+  .email {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0e0";
+    display: inline-block;
+    font-weight: 900;
+  }
+}
