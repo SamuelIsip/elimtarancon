@@ -13,7 +13,8 @@
     "tailwindcss": "^3.0.24"
   },
   "scripts": {
-    "build": "./node_modules/.bin/babel ./node_modules/flowbite/dist/flowbite.js --out-dir lib"
+    "build": "./node_modules/.bin/babel ./node_modules/flowbite/dist/flowbite.js --out-dir lib",
+    "tailwind": "npx tailwindcss -i ./css/input.css -o ./css/output.css --watch"
   },
   "repository": {
     "type": "git",

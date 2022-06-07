@@ -6,35 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/x-icon" href="img/freedom.png" />
     <link rel="stylesheet" href="./css/output.css" />
+
     <script
       src="https://kit.fontawesome.com/6ad8a9903c.js"
       crossorigin="anonymous"
     ></script>
     <script defer src="./js/index.js"></script>
-    <script defer src="./lib/flowbite.js"></script>
+    <script defer src="./node_modules/flowbite/dist/flowbite.js"></script>
 
     <title>Biserica Elim Tarancon</title>
   </head>
   <body>
-    <nav class="bg-amber-600 border-gray-200 px-2 sm:px-4 py-2.5 shadow-lg">
+    <nav
+      class="z-40 fixed w-full bg-yellow-400 border-gray-200 px-2 sm:px-4 py-2.5 shadow-lg"
+    >
       <div
         class="container flex flex-wrap justify-between items-center mx-auto"
       >
-        <a href="#" class="flex items-center">
-          <img
-            src="./img/freedom.png"
-            alt="Elim Logo"
-            class="mr-3 h-6 sm:h-9"
-          />
+        <a href="#" class="flex">
+          <img src="./img/freedom.png" alt="Elim Logo" class="md:mr-3 h-8" />
           <span
-            class="self-center text-xl font-semibold whitespace-nowrap text-white"
-            >Elim</span
+            class="font-mono text-shadow tracking-wider self-center text-4xl whitespace-nowrap text-white"
+            >ELIM</span
           >
         </a>
         <button
           data-collapse-toggle="mobile-menu"
           type="button"
-          class="inline-flex items-center p-2 ml-3 text-sm text-white rounded-lg md:hidden hover:bg-gray-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-gray-200"
+          class="inline-flex items-center p-2 ml-3 text-sm text-white rounded-lg md:hidden focus:outline-none focus:ring-2"
           aria-controls="mobile-menu"
           aria-expanded="false"
         >
@@ -65,34 +64,42 @@
         </button>
         <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
           <ul
-            class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"
+            class="flex flex-col mt-4 text-white md:flex-row md:space-x-8 md:mt-0 md:text-base"
           >
-            <li>
+            <li
+              class="md:border-b md:border-b-transparent md:hover:border-b md:hover:border-gray-100"
+            >
               <a
                 href="#"
-                class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 md:bg-transparent md:border-0 md:text-white"
+                class="block py-2 pr-4 pl-3 border-b border-gray-100 md:border-transparent"
                 aria-curent="page"
                 >Acasă</a
               >
             </li>
-            <li>
+            <li
+              class="md:border-b md:border-b-transparent md:hover:border-b md:hover:border-gray-100"
+            >
               <a
                 href="#despre-noi"
-                class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-white"
+                class="block py-2 pr-4 pl-3 border-b border-gray-100 md:border-transparent"
                 >Despre noi</a
               >
             </li>
-            <li>
+            <li
+              class="md:border-b md:border-b-transparent md:hover:border-b md:hover:border-gray-100"
+            >
               <a
                 href="#program"
-                class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-white"
+                class="block py-2 pr-4 pl-3 border-b border-gray-100 md:border-transparent"
                 >Orar</a
               >
             </li>
-            <li>
+            <li
+              class="md:border-b md:border-b-transparent md:hover:border-b md:hover:border-gray-100"
+            >
               <a
                 href="#contact"
-                class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-white"
+                class="block py-2 pr-4 pl-3 border-b border-gray-100 md:border-transparent"
                 >Contact</a
               >
             </li>
@@ -103,18 +110,22 @@
     <main>
       <section>
         <div id="default-carousel" class="relative" data-carousel="static">
-          <!-- Carousel wrapper -->
           <div
-            class="overflow-hidden relative h-[500px] sm:h-[500px] xl:h-[500px]"
+            class="text-white absolute z-30 top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2"
           >
+            <h1 class="tracking-wide font-mono flex flex-col text-center">
+              <span class="text-shadow text-4xl md:text-6xl"
+                >Biserica Crestină Penticostală</span
+              ><span class="text-shadow text-6xl mt-8 md:text-8xl">Elim</span
+              ><span class="text-shadow text-2xl md:text-4xl">Tarancón</span>
+            </h1>
+          </div>
+          <!-- Carousel wrapper -->
+          <div class="overflow-hidden relative h-[550px] md:h-screen">
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-              <span
-                class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800"
-                >First Slide</span
-              >
               <img
                 src="./img/pexels-em-hopper-287332.jpg"
-                class="block absolute top-1/2 left-1/2 w-full h-[500px] sm:h-[500px] -translate-x-1/2 -translate-y-1/2"
+                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2"
                 alt="Image1"
               />
             </div>
@@ -212,18 +223,26 @@
           </div>
         </div>
       </section>
-      <div>
-        <h2>Versetul Zilei:</h2>
-        <script
-          type="text/javascript"
-          src="https://www.resursecrestine.ro/web-api-versetul-zilei"
-        ></script>
+      <div
+        class="my-14 bg-yellow-400 bg-opacity-70 relative before:clipPathBefore after:clipPathAfter"
+      >
+        <div class="p-1 w-1/2 m-auto text-center italic">
+          <h2 class="mb-2 not-italic text-lg font-medium">Versetul Zilei</h2>
+          <script
+            type="text/javascript"
+            src="https://www.resursecrestine.ro/web-api-versetul-zilei"
+          ></script>
+        </div>
       </div>
       <section id="despre-noi">
         <div class="flex flex-col p-9">
-          <div class="text-center">
-            <h1 class="text-3xl font-medium md:text-4xl">Despre noi</h1>
-            <p class="my-6">
+          <div class="text-center relative">
+            <h1
+              class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
+            >
+              Despre noi
+            </h1>
+            <p class="my-16">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
               asperiores rem nam molestiae aliquam doloribus possimus ex
               voluptate consectetur placeat.
@@ -335,10 +354,10 @@
             </ol>
           </div>
           <div
-            class="flex flex-col justify-around items-center text-center md:flex-row"
+            class="m-8 flex flex-col justify-around items-center text-center md:flex-row"
           >
             <div
-              class="flex flex-col items-center w-56 h-56 bg-blue-400 rounded-lg"
+              class="flex flex-col items-center w-56 h-56 bg-yellow-400 rounded-lg"
             >
               <img
                 src="./img/prezbiter.jpg"
@@ -349,7 +368,7 @@
               <h4 class="text-gray-800">Pastor</h4>
             </div>
             <div
-              class="flex flex-col items-center mt-5 w-56 h-56 bg-blue-400 rounded-lg md:mt-0"
+              class="flex flex-col items-center mt-5 w-56 h-56 bg-yellow-400 rounded-lg md:mt-0"
             >
               <img
                 src="./img/prezbiter.jpg"
@@ -360,7 +379,7 @@
               <h4 class="text-gray-800">Prezbiter</h4>
             </div>
             <div
-              class="flex flex-col items-center mt-5 w-56 h-56 bg-blue-400 rounded-lg md:mt-0"
+              class="flex flex-col items-center mt-5 w-56 h-56 bg-yellow-400 rounded-lg md:mt-0"
             >
               <img
                 src="./img/prezbiter.jpg"
@@ -374,12 +393,18 @@
         </div>
       </section>
       <section id="program">
-        <div class="text-center p-9">
-          <h1 class="text-3xl font-medium md:text-4xl">Program</h1>
-          <div
-            class="w-full m-auto mt-8 flex flex-col justify-center items-center flex-wrap md:flex-row"
+        <div class="relative text-center p-9">
+          <h1
+            class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
           >
-            <div class="w-full md:w-1/4 h-48 border">
+            Program
+          </h1>
+          <div
+            class="w-full m-auto mt-16 flex flex-col justify-center items-center flex-wrap md:flex-row"
+          >
+            <div
+              class="p-4 w-full md:w-1/4 h-64 rounded border border-[#9c5120] border-r-transparent"
+            >
               <h2 class="text-2xl mb-2 font-semibold">Marti</h2>
               <div class="pt-4">
                 <p class="text-xl mb-2">Serviciu Divin</p>
@@ -404,7 +429,9 @@
                 </div>
               </div>
             </div>
-            <div class="w-full md:w-1/4 h-48 border">
+            <div
+              class="p-4 w-full md:w-1/4 h-64 rounded border border-[#9c5120]"
+            >
               <h2 class="text-2xl mb-2 font-semibold">Joi</h2>
               <div class="pt-4">
                 <p class="text-xl mb-2">Serviciu Divin</p>
@@ -429,7 +456,9 @@
                 </div>
               </div>
             </div>
-            <div class="w-full md:w-1/4 h-48 border">
+            <div
+              class="p-4 w-full md:w-1/4 h-64 rounded border border-[#9c5120] border-l-transparent"
+            >
               <h2 class="text-2xl mb-2 font-semibold">Duminica</h2>
               <div class="pt-4">
                 <p class="text-xl mb-2">Dimineata</p>
@@ -476,7 +505,9 @@
                 </div>
               </div>
             </div>
-            <div class="w-full md:w-2/4 h-58 border">
+            <div
+              class="p-4 w-full md:w-2/4 h-64 rounded border border-[#9c5120] border-t-transparent"
+            >
               <h2 class="text-2xl mb-2 font-semibold">Tineri & Copii</h2>
               <div class="flex flex-row justify-around">
                 <div>
@@ -582,11 +613,15 @@
       </section>
       <section id="contact">
         <div class="p-9 flex flex-row justify-center flex-wrap m-auto">
-          <div class="w-full md:border-r-2 md:pr-3 md:w-1/2">
-            <h1 class="text-3xl font-medium pb-4 md:text-right md:text-4xl">
+          <div
+            class="relative text-center w-full md:text-right md:border-r-2 md:pr-3 md:w-1/2"
+          >
+            <h1
+              class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
+            >
               Informatii de Contact
             </h1>
-            <div>
+            <div class="mt-16">
               <div class="pt-1 flex flex-row md:justify-end items-center">
                 <p
                   class="before:ubication md:before:bg-none md:after:ubication"
@@ -606,7 +641,7 @@
               </div>
               <div class="pt-1 flex flex-row md:justify-end items-center pb-2">
                 <p class="before:email md:before:bg-none md:after:email">
-                  elimtarancon.contact@gmail.com
+                  contact.elimtarancon@gmail.com
                 </p>
               </div>
             </div>
@@ -623,11 +658,15 @@
               ></iframe>
             </div>
           </div>
-          <div class="w-full pt-9 md:pl-3 md:w-1/2 md:pt-0">
-            <h1 class="text-3xl font-medium pb-4 md:text-4xl text-left">
+          <div
+            class="relative w-full pt-9 text-center md:text-left md:pl-3 md:w-1/2 md:pt-0"
+          >
+            <h1
+              class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
+            >
               Formular de Contact
             </h1>
-            <div>
+            <div class="mt-16">
               <form action="" method="post">
                 <div class="flex flex-col items-start pb-2">
                   <label for="name">Nume</label
@@ -675,12 +714,14 @@
       </section>
     </main>
     <footer>
-      <div>
-        <h1 class="text-3xl font-medium text-center md:text-4xl">
+      <div class="mt-8 relative text-center">
+        <h1
+          class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
+        >
           Salutul Bisericii
         </h1>
         <div
-          class="bg-[url('../img/betel-salut-bg.jpg')] bg-center bg-no-repeat bg-cover py-12"
+          class="mt-16 bg-[url('../img/betel-salut-bg.jpg')] bg-center bg-no-repeat bg-cover py-12"
         >
           <div class="px-2 md:px-32">
             <div class="bg-white bg-opacity-60 rounded-xl mx-6 md:mx-40 p-2">
@@ -695,7 +736,7 @@
       </div>
       <div>
         <p class="text-center text-sm text-gray-500 m-8">
-          2022 -
+          © 2022 -
           <script>
             document.write(new Date().getFullYear());
           </script>
