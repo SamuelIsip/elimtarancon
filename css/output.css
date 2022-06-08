@@ -1824,7 +1824,7 @@ html {
   -webkit-clip-path: polygon(0 0px, 0px 100%, 100% 100%, 100% 40px);
           clip-path: polygon(0 0px, 0px 100%, 100% 100%, 100% 40px);
   height: 40px;
-  top: -39.7px;
+  top: -40px;
   content: "";
   background-color: rgba(227, 160, 8, 0.7);
 }
