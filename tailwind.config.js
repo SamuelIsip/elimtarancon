@@ -1,5 +1,10 @@
 module.exports = {
-  content: ["./*.html", "./js/**/*.js", "./node_modules/flowbite/**/*.js"],
+  content: [
+    "./*.html",
+    "./js/**/*.js",
+    "./node_modules/flowbite/**/*.js",
+    "./lib/**/*.js",
+  ],
   theme: {
     extend: {
       animation: {
