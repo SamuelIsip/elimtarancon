@@ -892,6 +892,43 @@ html {
       1px 1px 0 #000;
 }
 
+.flipCard_inner {
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flipCard_inner:hover {
+  transform: rotateY(180deg);
+}
+
+.flipCard_front,
+  .flipCard_back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 14rem;
+  height: 14rem;
+  background-color: rgb(227 160 8);
+  border-radius: 0.5rem;
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+}
+
+.flipCard_back {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotateY(180deg);
+}
+
 .visible {
   visibility: visible;
 }
@@ -1102,10 +1139,6 @@ html {
   height: 0.75rem;
 }
 
-.h-56 {
-  height: 14rem;
-}
-
 .h-32 {
   height: 8rem;
 }
@@ -1148,10 +1181,6 @@ html {
 
 .w-3 {
   width: 0.75rem;
-}
-
-.w-56 {
-  width: 14rem;
 }
 
 .w-32 {
@@ -1635,6 +1664,10 @@ html {
   font-weight: 400;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .italic {
   font-style: italic;
 }
@@ -1709,12 +1742,6 @@ html {
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-2xl {
-  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
