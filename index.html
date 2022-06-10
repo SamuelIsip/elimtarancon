@@ -7,10 +7,16 @@
     <link rel="shortcut icon" type="image/x-icon" href="img/freedom.png" />
     <link rel="stylesheet" href="./css/output.css" />
     <script
-      src="https://kit.fontawesome.com/6ad8a9903c.js"
-      crossorigin="anonymous"
+      src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+      async
+      defer
     ></script>
-    <script defer src="./js/index.js"></script>
+    <script
+      defer
+      crossorigin="anonymous"
+      src="https://kit.fontawesome.com/6ad8a9903c.js"
+    ></script>
+    <script defer src="./lib/index.js"></script>
     <script defer src="./lib/flowbite.js"></script>
 
     <title>Biserica Elim Tarancon</title>
@@ -676,7 +682,7 @@
               Formular de Contact
             </h1>
             <div class="mt-16">
-              <form action="" method="post">
+              <form method="post" id="contact-form">
                 <div class="flex flex-col items-start pb-4">
                   <label for="name"
                     >Nume <span class="text-red-600">*</span></label
@@ -687,6 +693,7 @@
                     name="name"
                     id="name"
                     class="w-full p-2 rounded border-gray-400"
+                    required
                   />
                 </div>
                 <div class="flex flex-col items-start pb-4">
@@ -697,6 +704,7 @@
                     name="tlf"
                     id="tlf"
                     class="w-full p-2 rounded border-gray-400"
+                    required
                   />
                 </div>
                 <div class="flex flex-col items-start pb-4">
@@ -707,6 +715,7 @@
                     name="email"
                     id="email"
                     class="w-full p-2 rounded border-gray-400"
+                    required
                   />
                 </div>
                 <div class="flex flex-col items-start pb-4">
@@ -718,8 +727,10 @@
                     cols="40"
                     rows="4"
                     class="w-full rounded border-gray-400"
+                    required
                   ></textarea>
                 </div>
+                <div id="recaptcha" class="pb-4"></div>
                 <div class="flex flex-col items-start">
                   <input
                     type="submit"
