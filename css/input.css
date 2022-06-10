@@ -86,4 +86,40 @@
     bottom: -15px;
     transform: translateX(-50%) translateY(50%);
   }
+
+  .flipCard_inner {
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+
+  .flipCard_inner:hover {
+    transform: rotateY(180deg);
+  }
+
+  .flipCard_front,
+  .flipCard_back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 14rem;
+    height: 14rem;
+    background-color: rgb(227 160 8);
+    border-radius: 0.5rem;
+    --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Safari */
+  }
+
+  .flipCard_back {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotateY(180deg);
+  }
 }
