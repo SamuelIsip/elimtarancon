@@ -8,7 +8,6 @@ function submitForm(e) {
 
   dataValidation(data);
 
-  console.log(JSON.stringify(data));
   if (!fetchUserData(data)) {
     return false;
   }
