@@ -671,7 +671,7 @@
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12224.102908323908!2d-3.0072738!3d40.0078729!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8bb871871da1709f!2sBiserica%20Elim%20Taranc%C3%B3n!5e0!3m2!1ses!2ses!4v1654360708817!5m2!1ses!2ses"
                 width="400"
-                height="300"
+                height="350"
                 style="border: 0"
                 allowfullscreen=""
                 loading="lazy"
@@ -701,6 +701,7 @@
                     id="name"
                     class="w-full p-2 rounded border-gray-400"
                     required
+                    placeholder="Nume"
                   />
                 </div>
                 <div class="flex flex-col items-start pb-4">
@@ -712,6 +713,7 @@
                     id="tlf"
                     class="w-full p-2 rounded border-gray-400"
                     required
+                    placeholder="Ex: 123456789"
                   />
                 </div>
                 <div class="flex flex-col items-start pb-4">
@@ -723,6 +725,7 @@
                     id="email"
                     class="w-full p-2 rounded border-gray-400"
                     required
+                    placeholder="email@gmail.com"
                   />
                 </div>
                 <div class="flex flex-col items-start pb-4">
@@ -735,12 +738,26 @@
                     rows="4"
                     class="w-full rounded border-gray-400"
                     required
+                    placeholder="..."
                   ></textarea>
                 </div>
                 <div
+                  id="captcha"
                   class="g-recaptcha pb-4"
                   data-sitekey="6Lf_YFkgAAAAAGqT_55SvWQyVfKzVHMfwahxJ_v4"
                 ></div>
+                <div
+                  id="message_error_container"
+                  class="bg-red-600 w-100 rounded text-white text-center mb-4 hidden"
+                >
+                  <p id="error_message" class="p-2">Default error message</p>
+                </div>
+                <div
+                  id="message_success_container"
+                  class="bg-green-500 w-100 rounded text-white text-center mb-4 hidden"
+                >
+                  <p class="p-2">Mesajul a fost trimis catre Bis. Elim!</p>
+                </div>
                 <div class="flex flex-col items-start">
                   <input
                     type="submit"
