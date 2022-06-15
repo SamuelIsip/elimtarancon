@@ -8,7 +8,7 @@ function submitForm(e) {
 
   if (dataValidation(data) == false) return false;
 
-  fetchUserData(data);
+  if (fetchUserData(data) == false) return false;
 
   contactForm.reset();
 
@@ -29,7 +29,8 @@ async function fetchUserData(data) {
     }
   );
 
-  if (!response.ok) errorMessage("Captcha Verification Failed!", "captcha");
+  if (!response.ok)
+    return errorMessage("Captcha Verification Failed!", "captcha");
 }
 
 function dataValidation(data) {
