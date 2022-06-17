@@ -4,6 +4,7 @@
   "description": "Elim Church",
   "main": "tailwind.config.js",
   "dependencies": {
+    "dompurify": "^2.3.8",
     "flowbite": "^1.4.7"
   },
   "devDependencies": {
