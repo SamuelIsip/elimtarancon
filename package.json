@@ -14,7 +14,7 @@
     "@babel/preset-env": "^7.18.2"
   },
   "scripts": {
-    "buildbabel": "./node_modules/.bin/babel ./node_modules/flowbite/dist/flowbite.js ./js/index.js --out-dir lib",
+    "buildbabel": "./node_modules/.bin/babel ./node_modules/flowbite/dist/flowbite.js ./node_modules/dompurify/dist/purify.js ./js/index.js --out-dir lib",
     "tailwind": "npx tailwindcss -i ./css/input.css -o ./css/output.css"
   },
   "repository": {

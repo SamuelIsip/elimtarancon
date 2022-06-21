@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/x-icon" href="img/freedom.png" />
     <link rel="stylesheet" href="./css/output.css" />
-    <script defer async src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script
+      defer
+      async
+      src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"
+    ></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script
       defer
@@ -70,7 +74,7 @@
             class="flex flex-col mt-4 text-white md:flex-row md:space-x-8 md:mt-0 md:text-base"
           >
             <li
-              class="md:border-b md:border-b-transparent md:hover:border-b md:hover:border-gray-100"
+              class="navLink md:border-b md:border-b-transparent md:hover:border-b md:hover:border-gray-100"
             >
               <a
                 href="#"
@@ -79,7 +83,7 @@
               >
             </li>
             <li
-              class="md:border-b md:border-b-transparent md:hover:border-b md:hover:border-gray-100"
+              class="navLink md:border-b md:border-b-transparent md:hover:border-b md:hover:border-gray-100"
             >
               <a
                 href="#despre-noi"
@@ -88,7 +92,7 @@
               >
             </li>
             <li
-              class="md:border-b md:border-b-transparent md:hover:border-b md:hover:border-gray-100"
+              class="navLink md:border-b md:border-b-transparent md:hover:border-b md:hover:border-gray-100"
             >
               <a
                 href="#program"
@@ -97,7 +101,7 @@
               >
             </li>
             <li
-              class="md:border-b md:border-b-transparent md:hover:border-b md:hover:border-gray-100"
+              class="navLink md:border-b md:border-b-transparent md:hover:border-b md:hover:border-gray-100"
             >
               <a
                 href="#contact"
@@ -113,7 +117,7 @@
       <section>
         <div id="default-carousel" class="relative" data-carousel="slide">
           <div
-          id="title"
+            id="title"
             class="text-white absolute z-30 top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2"
           >
             <h2 class="tracking-wide font-mono flex flex-col text-center">
@@ -127,109 +131,107 @@
           <div class="overflow-hidden relative h-[550px] md:h-screen">
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
               <div
-                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('/img/Botez1.jpg')] bg-cover bg-no-repeat bg-center"
+                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('/img/slide/Botez1.jpg')] bg-cover bg-no-repeat bg-center"
               >
                 <span class="hidden">First Image</span>
               </div>
             </div>
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
               <div
-                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('/img/Botez2.jpg')] bg-cover bg-no-repeat bg-center"
+                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('/img/slide/Botez2.jpg')] bg-cover bg-no-repeat bg-center"
               >
                 <span class="hidden">Second Image</span>
               </div>
             </div>
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
               <div
-                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('/img/tinerii.jpeg')] bg-cover bg-no-repeat bg-center"
+                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('/img/slide/tinerii.jpeg')] bg-cover bg-no-repeat bg-center"
               >
                 <span class="hidden">Third Image</span>
               </div>
             </div>
-            
-            </div>
-            <!-- Slider indicators -->
-            <div
-              class="flex absolute bottom-5 pb-7 left-1/2 z-30 space-x-3 -translate-x-1/2"
-            >
-              <button
-                type="button"
-                class="w-9 h-1.5"
-                aria-current="false"
-                aria-label="Slide 1"
-                data-carousel-slide-to="0"
-              ></button>
-              <button
-                type="button"
-                class="w-9 h-1.5"
-                aria-current="false"
-                aria-label="Slide 2"
-                data-carousel-slide-to="1"
-              ></button>
-              <button
-                type="button"
-                class="w-9 h-1.5"
-                aria-current="false"
-                aria-label="Slide 3"
-                data-carousel-slide-to="2"
-              ></button>
-            </div>
-            <!-- Slider controls -->
-            <button
-              type="button"
-              class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
-              data-carousel-prev
-            >
-              <span
-                class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
-              >
-                <svg
-                  class="w-5 h-5 text-white sm:w-6 sm:h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 19l-7-7 7-7"
-                  ></path>
-                </svg>
-                <span class="hidden">Previous</span>
-              </span>
-            </button>
-            <button
-              type="button"
-              class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
-              data-carousel-next
-            >
-              <span
-                class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
-              >
-                <svg
-                  class="w-5 h-5 text-white sm:w-6 sm:h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 5l7 7-7 7"
-                  ></path>
-                </svg>
-                <span class="hidden">Next</span>
-              </span>
-            </button>
           </div>
+          <!-- Slider indicators -->
+          <div
+            class="flex absolute bottom-5 pb-7 left-1/2 z-30 space-x-3 -translate-x-1/2"
+          >
+            <button
+              type="button"
+              class="w-9 h-1.5"
+              aria-current="false"
+              aria-label="Slide 1"
+              data-carousel-slide-to="0"
+            ></button>
+            <button
+              type="button"
+              class="w-9 h-1.5"
+              aria-current="false"
+              aria-label="Slide 2"
+              data-carousel-slide-to="1"
+            ></button>
+            <button
+              type="button"
+              class="w-9 h-1.5"
+              aria-current="false"
+              aria-label="Slide 3"
+              data-carousel-slide-to="2"
+            ></button>
+          </div>
+          <!-- Slider controls -->
+          <button
+            type="button"
+            class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+            data-carousel-prev
+          >
+            <span
+              class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            >
+              <svg
+                class="w-5 h-5 text-white sm:w-6 sm:h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                ></path>
+              </svg>
+              <span class="hidden">Previous</span>
+            </span>
+          </button>
+          <button
+            type="button"
+            class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+            data-carousel-next
+          >
+            <span
+              class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            >
+              <svg
+                class="w-5 h-5 text-white sm:w-6 sm:h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+              <span class="hidden">Next</span>
+            </span>
+          </button>
         </div>
       </section>
       <div
-      id="verset_zilnic"
+        id="verset_zilnic"
         class="my-14 bg-yellow-400 bg-opacity-70 relative before:clipPathBefore after:clipPathAfter"
       >
         <div class="p-1 w-1/2 m-auto text-center italic">
@@ -375,7 +377,7 @@
             <div class="slujitori flipCard_inner mt-5">
               <div class="flipCard_front">
                 <img
-                  src="./img/pastor.png"
+                  src="./img/slujitori/pastor.png"
                   alt="Profile1"
                   class="w-32 h-32 m-auto rounded-full"
                 />
@@ -390,7 +392,7 @@
             <div class="slujitori flipCard_inner mt-5">
               <div class="flipCard_front">
                 <img
-                  src="./img/prezbiter.png"
+                  src="./img/slujitori/prezbiter.png"
                   alt="Profile2"
                   class="w-32 h-32 m-auto rounded-full"
                 />
@@ -405,7 +407,7 @@
             <div class="slujitori flipCard_inner mt-5">
               <div class="flipCard_front">
                 <img
-                  src="./img/diacon.png"
+                  src="./img/slujitori/diacon.png"
                   alt="Profile2"
                   class="w-32 h-32 m-auto rounded-full"
                 />
@@ -639,6 +641,46 @@
           </div>
         </div>
       </section>
+      <section id="evenimente" class="pt-16">
+        <div class="relative text-center p-9">
+          <h2
+            class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
+          >
+            Evenimente
+          </h2>
+          <div
+            class="w-full mt-16 flex flex-row justify-center items-center flex-wrap md:flex-row"
+          >
+            <div>
+              <img
+                src="./img/evenimente/Mafiot3_1_2_350x400.jpg"
+                alt="Eveniment"
+                class="hidden md:mx-4 md:block w-full md:w-[350px] h-[400px] shadow-2xl opacity-60 rounded-sm"
+              />
+            </div>
+            <div>
+              <img
+                src="./img/evenimente/Vasile_Tofan_1_350x450.png"
+                alt="Eveniment"
+                class="md:mx-4 block w-full md:w-[350px] h-[450px] shadow-2xl rounded-sm"
+              />
+            </div>
+            <div
+              class="hidden relative z-10 md:w-[350px] h-[400px] shadow-2xl md:flex items-center justify-center"
+            >
+              <div
+                class="absolute w-full h-full z-20 bg-gray-300 opacity-60 rounded-sm"
+              >
+                <span class="hidden">Eveniment</span>
+              </div>
+              <div class="flex flex-col z-10">
+                <div class="after:noEventImage"></div>
+                <p>URMEAZĂ...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="contact" class="pt-16">
         <div class="p-9 flex flex-row justify-center flex-wrap m-auto md:w-2/3">
           <div
@@ -707,7 +749,6 @@
                     id="name"
                     class="w-full p-2 rounded border-gray-400 focus:outline-none focus:ring-0 focus:border-yellow-400"
                     required
-                    
                   />
                 </div>
                 <div class="flex flex-col items-start pb-4 text-sm">
@@ -719,7 +760,6 @@
                     id="tlf"
                     class="w-full p-2 rounded border-gray-400 focus:outline-none focus:ring-0 focus:border-yellow-400"
                     required
-                    
                   />
                 </div>
                 <div class="flex flex-col items-start pb-4 text-sm">
@@ -731,7 +771,6 @@
                     id="email"
                     class="w-full p-2 rounded border-gray-400 focus:outline-none focus:ring-0 focus:border-yellow-400"
                     required
-                    
                   />
                 </div>
                 <div class="flex flex-col items-start pb-4 text-sm">
@@ -744,7 +783,6 @@
                     rows="4"
                     class="w-full rounded border-gray-400 focus:outline-none focus:ring-0 focus:border-yellow-400"
                     required
-                    
                   ></textarea>
                 </div>
                 <div
@@ -758,18 +796,56 @@
                 >
                   <p id="error_message" class="p-2">Default error message</p>
                 </div>
-                <div
-                  id="message_success_container"
-                  class="bg-green-500 w-100 rounded text-white text-center mb-4 hidden"
-                >
-                  <p class="p-2">Mesajul a fost trimis catre Bis. Elim!</p>
-                </div>
                 <div class="flex flex-col items-start">
-                  <input
-                    type="submit"
-                    value="Trimite"
-                    class="border rounded p-3 cursor-pointer w-28 bg-yellow-400 text-center text-white hover:bg-yellow-500"
-                  />
+                  <div id="submit_ini">
+                    <input
+                      type="submit"
+                      value="Trimite"
+                      class="border rounded p-3 cursor-pointer w-28 bg-yellow-400 text-center text-white hover:bg-yellow-500"
+                    />
+                  </div>
+                  <div id="submit_loading" class="hidden">
+                    <button
+                      disabled
+                      type="button"
+                      class="border rounded p-3 w-28 bg-green-400 text-center text-white inline-flex items-center"
+                    >
+                      <svg
+                        id="loading_svg"
+                        role="status"
+                        class="inline w-4 h-4 mr-3 text-white animate-spin"
+                        viewBox="0 0 100 101"
+                        fill="none"
+                        xmlns="https://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                          fill="#E5E7EB"
+                        />
+                        <path
+                          d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                      <svg
+                        id="ok_svg"
+                        role="status"
+                        class="hidden w-6 h-6 mr-3 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        ></path>
+                      </svg>
+                      <p id="submit_text">Loading</p>
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
@@ -778,7 +854,7 @@
       </section>
     </main>
     <footer class="pt-16">
-      <div  id="salutul" class="mt-8 relative text-center">
+      <div id="salutul" class="mt-8 relative text-center">
         <h2
           class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
         >
