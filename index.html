@@ -35,6 +35,25 @@
     <script defer src="./lib/minified/flowbite.js"></script>
 
     <title>Biserica Penticostala Elim Tarancon</title>
+    <style>
+      .page-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .page-wrapper-content {
+        max-width: 1300px;
+        width: 100%;
+      }
+      .bg-opacity {
+        background-color: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+    </style>
   </head>
   <body itemscope="itemscope" itemtype="https://schema.org/WebPage" >
     <nav itemscope="itemscope" itemtype="https://schema.org/WPHeader"
@@ -153,6 +172,7 @@
               <div
                 class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('./img/slide/Botez1.webp')] bg-cover bg-no-repeat bg-center"
               >
+                <div class="bg-opacity"></div>
                 <span class="hidden">First Image</span>
               </div>
             </div>
@@ -160,6 +180,7 @@
               <div
                 class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('./img/slide/Botez2.webp')] bg-cover bg-no-repeat bg-center"
               >
+                <div class="bg-opacity"></div>
                 <span class="hidden">Second Image</span>
               </div>
             </div>
@@ -167,6 +188,7 @@
               <div
                 class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('./img/slide/tinerii.webp')] bg-cover bg-no-repeat bg-center"
               >
+                <div class="bg-opacity"></div>
                 <span class="hidden">Third Image</span>
               </div>
             </div>
@@ -269,8 +291,8 @@
           <p id="verseOfDayReference">Ioan 3:16</p>
         </div>
       </div>
-      <section id="despre-noi" class="pt-16">
-        <div class="flex flex-col p-9">
+      <section id="despre-noi" class="pt-16 page-wrapper">
+        <div class="flex flex-col p-9 page-wrapper-content">
           <div class="text-center relative">
             <h2
               class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
@@ -458,8 +480,8 @@
           </div>
         </div>
       </section>
-      <section id="program" class="pt-16">
-        <div class="relative text-center p-9">
+      <section id="program" class="pt-16 page-wrapper">
+        <div class="relative text-center p-9 page-wrapper-content">
           <h2
             class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
           >
@@ -677,8 +699,8 @@
           </div>
         </div>
       </section>
-      <section id="evenimente" class="pt-16">
-        <div class="relative text-center p-9">
+      <section id="evenimente" class="pt-16 page-wrapper">
+        <div class="relative text-center p-9 page-wrapper-content">
           <h2
             class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
           >
@@ -717,8 +739,8 @@
           </div>
         </div>
       </section>
-      <section id="contact" class="pt-16">
-        <div class="p-9 flex flex-row justify-center flex-wrap m-auto xl:w-2/3">
+      <section id="contact" class="pt-16 page-wrapper">
+        <div class="p-9 flex flex-row justify-center flex-wrap m-auto xl:w-2/3 page-wrapper-content">
           <div
             class="relative text-center w-full md:text-right md:border-r-2 md:pr-6 md:w-1/2"
           >
