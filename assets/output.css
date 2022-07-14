@@ -899,7 +899,7 @@ html {
   cursor: pointer;
 }
 
-.flipCard_inner:hover {
+.flipCard_out:hover .flipCard_inner {
   transform: rotateY(180deg);
 }
 

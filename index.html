@@ -34,8 +34,13 @@
     <script defer src="./lib/minified/index.js"></script>
     <script defer src="./lib/minified/flowbite.js"></script>
 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
     <title>Biserica Penticostala Elim Tarancon</title>
     <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+      }
       .page-wrapper {
         display: flex;
         flex-direction: column;
@@ -52,6 +57,19 @@
         left: 0;
         bottom: 0;
         right: 0;
+      }
+      .verseOfDayContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      #verseOfDay {
+        background-color: rgba(255,255,255,.3);
+        padding: 5px 30px;
+        border-radius: 10px;
+        color: #555;
+        margin-bottom: 5px;
       }
     </style>
   </head>
@@ -281,7 +299,7 @@
         id="verset_zilnic"
         class="my-14 bg-yellow-400 bg-opacity-70 relative before:clipPathBefore after:clipPathAfter"
       >
-        <div class="p-1 w-1/2 m-auto text-center italic">
+        <div class="p-1 w-1/2 m-auto text-center italic verseOfDayContainer">
           <h2 class="mb-2 not-italic text-lg font-medium">Versetul Zilei</h2>
           <p id="verseOfDay">
             Fiindcă atât de mult a iubit Dumnezeu lumea, că a dat pe singurul
@@ -432,49 +450,55 @@
           <div
             class="m-8 flex flex-col justify-around items-center text-center md:flex-row"
           >
-            <div class="slujitori flipCard_inner mt-5">
-              <div class="flipCard_front">
-                <img
-                  src="./img/slujitori/pastor.webp"
-                  alt="Pastor Image"
-                  class="w-32 h-32 m-auto rounded-full"
-                />
-                <h3 class="text-xl">Gavrilă Zăgrean</h3>
-                <h4 class="text-gray-800 italic mb-2">Pastor</h4>
-              </div>
-              <div class="flipCard_back font-bold">
-                <h2 class="text-lg">Număr de contact</h2>
-                <h3 class="italic text-base">+34 ... ... ...</h3>
-              </div>
-            </div>
-            <div class="slujitori flipCard_inner mt-5">
-              <div class="flipCard_front">
-                <img
-                  src="./img/slujitori/prezbiter.webp"
-                  alt="Prezbiter Image"
-                  class="w-32 h-32 m-auto rounded-full"
-                />
-                <h3 class="text-xl">Marius Nicorici</h3>
-                <h4 class="text-gray-800 italic mb-2">Prezbiter</h4>
-              </div>
-              <div class="flipCard_back font-bold">
-                <h2 class="text-lg">Număr de contact</h2>
-                <h3 class="italic text-base">+34 647 770 153</h3>
+            <div class="flipCard_out p-4">
+              <div class="slujitori flipCard_inner mt-5">
+                <div class="flipCard_front">
+                  <img
+                    src="./img/slujitori/pastor.webp"
+                    alt="Pastor Image"
+                    class="w-32 h-32 m-auto rounded-full"
+                  />
+                  <h3 class="text-xl">Gavrilă Zăgrean</h3>
+                  <h4 class="text-gray-800 italic mb-2">Pastor</h4>
+                </div>
+                <div class="flipCard_back font-bold">
+                  <h2 class="text-lg">Număr de contact</h2>
+                  <h3 class="italic text-base">+34 ... ... ...</h3>
+                </div>
               </div>
             </div>
-            <div class="slujitori flipCard_inner mt-5">
-              <div class="flipCard_front">
-                <img
-                  src="./img/slujitori/diacon.webp"
-                  alt="Diacon Image"
-                  class="w-32 h-32 m-auto rounded-full"
-                />
-                <h3 class="text-xl">Daniel Florea</h3>
-                <h4 class="text-gray-800 italic mb-2">Diacon</h4>
+            <div class="flipCard_out p-4">
+              <div class="slujitori flipCard_inner mt-5">
+                <div class="flipCard_front">
+                  <img
+                    src="./img/slujitori/prezbiter.webp"
+                    alt="Prezbiter Image"
+                    class="w-32 h-32 m-auto rounded-full"
+                  />
+                  <h3 class="text-xl">Marius Nicorici</h3>
+                  <h4 class="text-gray-800 italic mb-2">Prezbiter</h4>
+                </div>
+                <div class="flipCard_back font-bold">
+                  <h2 class="text-lg">Număr de contact</h2>
+                  <h3 class="italic text-base">+34 647 770 153</h3>
+                </div>
               </div>
-              <div class="flipCard_back font-bold">
-                <h2 class="text-lg">Număr de contact</h2>
-                <h3 class="italic text-base">+34 610 542 465</h3>
+            </div>
+            <div class="flipCard_out p-4">
+              <div class="slujitori flipCard_inner mt-5">
+                <div class="flipCard_front">
+                  <img
+                    src="./img/slujitori/diacon.webp"
+                    alt="Diacon Image"
+                    class="w-32 h-32 m-auto rounded-full"
+                  />
+                  <h3 class="text-xl">Daniel Florea</h3>
+                  <h4 class="text-gray-800 italic mb-2">Diacon</h4>
+                </div>
+                <div class="flipCard_back font-bold">
+                  <h2 class="text-lg">Număr de contact</h2>
+                  <h3 class="italic text-base">+34 610 542 465</h3>
+                </div>
               </div>
             </div>
           </div>
