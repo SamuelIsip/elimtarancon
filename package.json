@@ -6,6 +6,7 @@
   "dependencies": {
     "dompurify": "^2.3.8",
     "flowbite": "^1.4.7",
+    "scrollreveal": "^4.0.9",
     "tailwindcss": "^3.0.24"
   },
   "devDependencies": {
@@ -14,8 +15,8 @@
     "@babel/preset-env": "^7.18.2"
   },
   "scripts": {
-    "buildbabel": "./node_modules/.bin/babel ./node_modules/flowbite/dist/flowbite.js ./node_modules/dompurify/dist/purify.js ./js/index.js --out-dir lib",
-    "tailwind": "npx tailwindcss -i ./css/input.css -o ./css/output.css"
+    "buildbabel": "./node_modules/.bin/babel ./node_modules/flowbite/dist/flowbite.js ./node_modules/dompurify/dist/purify.js ./node_modules/scrollreveal/dist/scrollreveal.min.js ./js/index.js --out-dir lib",
+    "tailwind": "npx tailwindcss -i ./assets/input.css -o ./assets/output.css"
   },
   "repository": {
     "type": "git",

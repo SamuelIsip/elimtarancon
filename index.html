@@ -4,24 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/x-icon" href="img/freedom.png" />
-    <link rel="stylesheet" href="./css/output.css" />
-    <script
-      defer
-      async
-      src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"
-    ></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script
-      defer
-      crossorigin="anonymous"
-      src="https://kit.fontawesome.com/6ad8a9903c.js"
-    ></script>
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="description"
+      content="Pagina oficiala a Bisericii Elim din Tarancon, pentru informatii utile despre biserica, precum locatia, evenimente, date de contact."
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="img/freedom.webp" />
+    <link rel="stylesheet" href="./assets/output.css" />
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css" />
+    <script defer src="./lib/scrollreveal.min.js"></script>
+    <script defer src="https://www.google.com/recaptcha/api.js"></script>
     <script defer src="./lib/purify.js"></script>
     <script defer src="./lib/index.js"></script>
     <script defer src="./lib/flowbite.js"></script>
 
-    <title>Biserica Elim Tarancon</title>
+    <title>Biserica Penticostala Elim Tarancon</title>
   </head>
   <body>
     <nav
@@ -31,7 +28,11 @@
         class="container flex flex-wrap justify-between items-center mx-auto"
       >
         <a href="#" class="flex">
-          <img src="./img/freedom.png" alt="Elim Logo" class="md:mr-3 h-8" />
+          <img
+            src="./img/freedom.webp"
+            alt="Elim Logo"
+            class="md:mr-3 w-100 h-8"
+          />
           <span
             class="font-mono text-shadow tracking-wider self-center text-2xl md:text-4xl whitespace-nowrap text-white"
             >ELIM</span
@@ -120,32 +121,32 @@
             id="title"
             class="text-white absolute z-30 top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2"
           >
-            <h2 class="tracking-wide font-mono flex flex-col text-center">
+            <h1 class="tracking-wide font-mono flex flex-col text-center">
               <span class="text-shadow text-4xl md:text-6xl"
                 >Biserica Penticostală</span
               ><span class="text-shadow text-6xl mt-8 md:text-8xl">Elim</span
               ><span class="text-shadow text-2xl md:text-4xl">Tarancón</span>
-            </h2>
+            </h1>
           </div>
           <!-- Carousel wrapper -->
           <div class="overflow-hidden relative h-[550px] md:h-screen">
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
               <div
-                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('/img/slide/Botez1.jpg')] bg-cover bg-no-repeat bg-center"
+                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('/img/slide/Botez1.webp')] bg-cover bg-no-repeat bg-center"
               >
                 <span class="hidden">First Image</span>
               </div>
             </div>
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
               <div
-                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('/img/slide/Botez2.jpg')] bg-cover bg-no-repeat bg-center"
+                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('/img/slide/Botez2.webp')] bg-cover bg-no-repeat bg-center"
               >
                 <span class="hidden">Second Image</span>
               </div>
             </div>
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
               <div
-                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('/img/slide/tinerii.jpeg')] bg-cover bg-no-repeat bg-center"
+                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('/img/slide/tinerii.webp')] bg-cover bg-no-repeat bg-center"
               >
                 <span class="hidden">Third Image</span>
               </div>
@@ -236,7 +237,12 @@
       >
         <div class="p-1 w-1/2 m-auto text-center italic">
           <h2 class="mb-2 not-italic text-lg font-medium">Versetul Zilei</h2>
-          <script src="https://www.resursecrestine.ro/web-api-versetul-zilei"></script>
+          <p id="verseOfDay">
+            Fiindcă atât de mult a iubit Dumnezeu lumea, că a dat pe singurul
+            Lui Fiu, pentru ca oricine crede în El să nu piară, ci să aibă viaţa
+            veşnică.
+          </p>
+          <p id="verseOfDayReference">Ioan 3:16</p>
         </div>
       </div>
       <section id="despre-noi" class="pt-16">
@@ -292,14 +298,15 @@
                   credincioși care duceau dorul de părtășie și întâlnire cu
                   frații. Printre care era și fratele Neluțu Istrate, în a cărui
                   casă au început să se adune, în fiecare seară, frați și surori
-                  pentru a se ruga și cânta spre slava lui Dumnezeu. </br> În acest
-                  loc au fost mari bucurii prin Duhul Sfânt, prin a cărui ajutor
-                  credincioșii se înmulțeau și se uneau ca într-o adevărată
-                  familie. </br> Cu timpul au găsit un nou local în care s-a dat
-                  naștere în mod oficial la cea care avea să fie prima biserică
-                  penticostală română din Tarancón, sub conducerea fratelui Emil
-                  Șuticău și având ca pastor pe fratele Gavrilă Zăgrean din
-                  biserica Elim Arganda.
+                  pentru a se ruga și cânta spre slava lui Dumnezeu. <br />
+                  În acest loc au fost mari bucurii prin Duhul Sfânt, prin a
+                  cărui ajutor credincioșii se înmulțeau și se uneau ca într-o
+                  adevărată familie. <br />
+                  Cu timpul au găsit un nou local în care s-a dat naștere în mod
+                  oficial la cea care avea să fie prima biserică penticostală
+                  română din Tarancón, sub conducerea fratelui Emil Șuticău și
+                  având ca pastor pe fratele Gavrilă Zăgrean din biserica Elim
+                  Arganda.
                 </p>
               </li>
               <li class="despre_noi mb-10 ml-6">
@@ -331,10 +338,10 @@
                 </p>
                 <p class="mb-4 text-base font-normal text-gray-500">
                   Primul botez s-a desfășurat în râul Extremera în Iulie din
-                  anul 2003. </br> După care au mai urmat și altele prin care s-au
-                  adaus tot mai mulți credincioși în rândul celor de la început,
-                  având loc în anul 2022 cel mai mare botez, cu un număr de 15
-                  candidați.
+                  anul 2003. <br />
+                  După care au mai urmat și altele prin care s-au adaus tot mai
+                  mulți credincioși în rândul celor de la început, având loc în
+                  anul 2022 cel mai mare botez, cu un număr de 15 candidați.
                 </p>
               </li>
               <li class="despre_noi mb-10 ml-6">
@@ -367,8 +374,9 @@
                 <p class="mb-4 text-base font-normal text-gray-500">
                   Prin Harul Domnului, biserica crește în continuare și
                   desfășoară activități de studiu biblic, cântări cu diferite
-                  grupe de copii și tineri, cântări cu orchestra, seară de tineret, printre altele. </br> Toate
-                  acestea spre lauda și slava Celui care a început această
+                  grupe de copii și tineri, cântări cu orchestra, seară de
+                  tineret, printre altele. <br />
+                  Toate acestea spre lauda și slava Celui care a început această
                   lucrare, și Cel care o susține în continuare, și anume, Domnul
                   nostru Isus Hristos!
                 </p>
@@ -381,12 +389,12 @@
             <div class="slujitori flipCard_inner mt-5">
               <div class="flipCard_front">
                 <img
-                  src="./img/slujitori/pastor.png"
-                  alt="Profile1"
+                  src="./img/slujitori/pastor.webp"
+                  alt="Pastor Image"
                   class="w-32 h-32 m-auto rounded-full"
                 />
                 <h3 class="text-xl">Gavrilă Zăgrean</h3>
-                <h4 class="text-gray-800 italic">Pastor</h4>
+                <h4 class="text-gray-800 italic mb-2">Pastor</h4>
               </div>
               <div class="flipCard_back font-bold">
                 <h2 class="text-lg">Număr de contact</h2>
@@ -396,12 +404,12 @@
             <div class="slujitori flipCard_inner mt-5">
               <div class="flipCard_front">
                 <img
-                  src="./img/slujitori/prezbiter.png"
-                  alt="Profile2"
+                  src="./img/slujitori/prezbiter.webp"
+                  alt="Prezbiter Image"
                   class="w-32 h-32 m-auto rounded-full"
                 />
                 <h3 class="text-xl">Marius Nicorici</h3>
-                <h4 class="text-gray-800 italic">Prezbiter</h4>
+                <h4 class="text-gray-800 italic mb-2">Prezbiter</h4>
               </div>
               <div class="flipCard_back font-bold">
                 <h2 class="text-lg">Număr de contact</h2>
@@ -411,12 +419,12 @@
             <div class="slujitori flipCard_inner mt-5">
               <div class="flipCard_front">
                 <img
-                  src="./img/slujitori/diacon.png"
-                  alt="Profile2"
+                  src="./img/slujitori/diacon.webp"
+                  alt="Diacon Image"
                   class="w-32 h-32 m-auto rounded-full"
                 />
                 <h3 class="text-xl">Daniel Florea</h3>
-                <h4 class="text-gray-800 italic">Diacon</h4>
+                <h4 class="text-gray-800 italic mb-2">Diacon</h4>
               </div>
               <div class="flipCard_back font-bold">
                 <h2 class="text-lg">Număr de contact</h2>
@@ -657,15 +665,15 @@
           >
             <div>
               <img
-                src="./img/evenimente/Mafiot3_1_2_350x400.jpg"
-                alt="Eveniment"
+                src="./img/evenimente/Mafiot3-1-2-350x400.webp"
+                alt="Eveniment Anterior"
                 class="hidden md:mx-4 md:block w-full md:w-[350px] h-[400px] shadow-2xl opacity-60 rounded-sm"
               />
             </div>
             <div>
               <img
-                src="./img/evenimente/Vasile_Tofan_1_350x450.png"
-                alt="Eveniment"
+                src="./img/evenimente/Vasile-Tofan-1-350x450.webp"
+                alt="Eveniment Actual"
                 class="md:mx-4 block w-full md:w-[350px] h-[450px] md:h-[400px] lg:h-[450px] shadow-2xl rounded-sm"
               />
             </div>
@@ -882,7 +890,7 @@
           Salutul Bisericii
         </h2>
         <div
-          class="mt-16 bg-[url('../img/elim-salut-bg.jpg')] bg-center bg-no-repeat bg-cover py-16"
+          class="mt-16 bg-[url('../img/elim-salut-bg.webp')] bg-center bg-no-repeat bg-cover py-16"
         >
           <div class="px-2 lg:px-32">
             <div

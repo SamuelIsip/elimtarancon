@@ -871,7 +871,7 @@ html {
 }
 
 .mobile {
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 6 Free";
   content: "\f10b";
   display: inline-block;
   color: #91715d;
@@ -879,7 +879,7 @@ html {
 }
 
 .email {
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 6 Free";
   content: "\f0e0";
   display: inline-block;
   color: #91715d;
@@ -1521,20 +1521,20 @@ html {
   --tw-bg-opacity: 0.5;
 }
 
-.bg-\[url\(\'\/img\/slide\/Botez1\.jpg\'\)\] {
-  background-image: url('/img/slide/Botez1.jpg');
+.bg-\[url\(\'\/img\/slide\/Botez1\.webp\'\)\] {
+  background-image: url('/img/slide/Botez1.webp');
 }
 
-.bg-\[url\(\'\/img\/slide\/Botez2\.jpg\'\)\] {
-  background-image: url('/img/slide/Botez2.jpg');
+.bg-\[url\(\'\/img\/slide\/Botez2\.webp\'\)\] {
+  background-image: url('/img/slide/Botez2.webp');
 }
 
-.bg-\[url\(\'\/img\/slide\/tinerii\.jpeg\'\)\] {
-  background-image: url('/img/slide/tinerii.jpeg');
+.bg-\[url\(\'\/img\/slide\/tinerii\.webp\'\)\] {
+  background-image: url('/img/slide/tinerii.webp');
 }
 
-.bg-\[url\(\'\.\.\/img\/elim-salut-bg\.jpg\'\)\] {
-  background-image: url('../img/elim-salut-bg.jpg');
+.bg-\[url\(\'\.\.\/img\/elim-salut-bg\.webp\'\)\] {
+  background-image: url('../img/elim-salut-bg.webp');
 }
 
 .bg-cover {
@@ -1889,7 +1889,7 @@ html {
 }
 
 .before\:ubication::before {
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 6 Free";
   content: "\f3c5";
   display: inline-block;
   color: #91715d;
@@ -1897,7 +1897,7 @@ html {
 }
 
 .before\:mobile::before {
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 6 Free";
   content: "\f10b";
   display: inline-block;
   color: #91715d;
@@ -1905,7 +1905,7 @@ html {
 }
 
 .before\:phone::before {
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 6 Free";
   content: "\f095";
   display: inline-block;
   color: #91715d;
@@ -1913,7 +1913,7 @@ html {
 }
 
 .before\:email::before {
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 6 Free";
   content: "\f0e0";
   display: inline-block;
   color: #91715d;
@@ -1952,7 +1952,7 @@ html {
 }
 
 .after\:afterTitle::after {
-  background-image: url(./../img/ElimDove.png);
+  background-image: url(./../img/ElimDove.webp);
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1967,7 +1967,7 @@ html {
 }
 
 .after\:noEventImage::after {
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 6 Free";
   content: "\f03e";
   color: #000;
   font-size: 100px;
@@ -2341,7 +2341,7 @@ html {
   }
 
   .md\:after\:ubication::after {
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 6 Free";
     content: "\f3c5";
     display: inline-block;
     color: #91715d;
@@ -2349,7 +2349,7 @@ html {
   }
 
   .md\:after\:mobile::after {
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 6 Free";
     content: "\f10b";
     display: inline-block;
     color: #91715d;
@@ -2357,7 +2357,7 @@ html {
   }
 
   .md\:after\:phone::after {
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 6 Free";
     content: "\f095";
     display: inline-block;
     color: #91715d;
@@ -2365,7 +2365,7 @@ html {
   }
 
   .md\:after\:email::after {
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 6 Free";
     content: "\f0e0";
     display: inline-block;
     color: #91715d;
