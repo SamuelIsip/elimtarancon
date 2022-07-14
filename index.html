@@ -1,37 +1,49 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="ro_RO">
   <head>
+    <!-- serach engines optimization -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Pagina oficiala a Bisericii Elim din Tarancon, pentru informatii utile despre biserica, precum locatia, evenimente, date de contact.">
+    <meta name="keywords" content="Taracon, Biserica Elim, Biserica Elim Tarcon, Biserica Penticostala">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e3a008">
+    
+    <!-- meta of any social media -->
+    <meta property="og:url" content="https://elimtarancon.es/">
+    <meta property="og:site_name" content="Biserica Penticostala Elim Tarancon">
+    <meta property="og:locale" content="ro_RO">
+    <meta property="og:title" content="Biserica Penticostala Elim Tarancon">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/freedom.webp">
+    <meta property="og:description" content="Pagina oficiala a Bisericii Elim din Tarancon, pentru informatii utile despre biserica, precum locatia, evenimente, date de contact.">
+
     <meta
       name="google-site-verification"
       content="bolglgwyRNZil3NEDw16XzoRhwc2CAKHfFFLmTazwO4"
     />
-    <meta
-      name="description"
-      content="Pagina oficiala a Bisericii Elim din Tarancon, pentru informatii utile despre biserica, precum locatia, evenimente, date de contact."
-    />
-    <link rel="shortcut icon" type="image/x-icon" href="img/freedom.webp" />
-    <link rel="stylesheet" href="./assets/output.css" />
+    <link rel="icon" type="image/x-icon" href="img/freedom.webp">
+    <link rel="apple-touch-icon" href="img/freedom.webp">
+
+    <link rel="stylesheet" href="./assets/minified/output.css" />
     <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css" />
     <script defer src="./lib/scrollreveal.min.js"></script>
     <script defer src="https://www.google.com/recaptcha/api.js"></script>
-    <script defer src="./lib/purify.js"></script>
-    <script defer src="./lib/index.js"></script>
-    <script defer src="./lib/flowbite.js"></script>
+    <script defer src="./lib/minified/purify.js"></script>
+    <script defer src="./lib/minified/index.js"></script>
+    <script defer src="./lib/minified/flowbite.js"></script>
 
     <title>Biserica Penticostala Elim Tarancon</title>
   </head>
-  <body>
-    <nav
+  <body itemscope="itemscope" itemtype="https://schema.org/WebPage" >
+    <nav itemscope="itemscope" itemtype="https://schema.org/WPHeader"
       class="z-40 fixed w-full bg-yellow-400 border-gray-200 px-2 sm:px-4 py-2.5 shadow-lg"
     >
       <div
         class="container flex flex-wrap justify-between items-center mx-auto"
       >
-        <a href="#" class="flex">
+        <a href="#" class="flex" title="ELIM">
           <img
             src="./img/freedom.webp"
             alt="Elim Logo"
@@ -83,6 +95,7 @@
             >
               <a
                 href="#"
+                title="Acasă"
                 class="block py-2 pr-4 pl-3 border-b border-gray-100 md:border-transparent"
                 >Acasă</a
               >
@@ -92,6 +105,7 @@
             >
               <a
                 href="#despre-noi"
+                title="Despre noi"
                 class="block py-2 pr-4 pl-3 border-b border-gray-100 md:border-transparent"
                 >Despre noi</a
               >
@@ -110,6 +124,7 @@
             >
               <a
                 href="#contact"
+                title="Contact"
                 class="block py-2 pr-4 pl-3 border-b border-gray-100 md:border-transparent"
                 >Contact</a
               >
@@ -136,21 +151,21 @@
           <div class="overflow-hidden relative h-[550px] md:h-screen">
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
               <div
-                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('/img/slide/Botez1.webp')] bg-cover bg-no-repeat bg-center"
+                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('./img/slide/Botez1.webp')] bg-cover bg-no-repeat bg-center"
               >
                 <span class="hidden">First Image</span>
               </div>
             </div>
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
               <div
-                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('/img/slide/Botez2.webp')] bg-cover bg-no-repeat bg-center"
+                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('./img/slide/Botez2.webp')] bg-cover bg-no-repeat bg-center"
               >
                 <span class="hidden">Second Image</span>
               </div>
             </div>
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
               <div
-                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('/img/slide/tinerii.webp')] bg-cover bg-no-repeat bg-center"
+                class="fixed block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-[url('./img/slide/tinerii.webp')] bg-cover bg-no-repeat bg-center"
               >
                 <span class="hidden">Third Image</span>
               </div>
@@ -166,6 +181,7 @@
               aria-current="false"
               aria-label="Slide 1"
               data-carousel-slide-to="0"
+              title="Slide 1"
             ></button>
             <button
               type="button"
@@ -173,6 +189,7 @@
               aria-current="false"
               aria-label="Slide 2"
               data-carousel-slide-to="1"
+              title="Slide 2"
             ></button>
             <button
               type="button"
@@ -180,6 +197,7 @@
               aria-current="false"
               aria-label="Slide 3"
               data-carousel-slide-to="2"
+              title="Slide 3"
             ></button>
           </div>
           <!-- Slider controls -->
@@ -187,6 +205,7 @@
             type="button"
             class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
             data-carousel-prev
+            title="Previous"
           >
             <span
               class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
@@ -212,6 +231,7 @@
             type="button"
             class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
             data-carousel-next
+            title="Next"
           >
             <span
               class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
@@ -763,6 +783,7 @@
                     type="text"
                     name="name"
                     id="name"
+                    aria-placeholder="Nume"
                     class="w-full p-2 rounded border-gray-400 focus:outline-none focus:ring-0 focus:border-yellow-400"
                     required
                   />
@@ -774,6 +795,7 @@
                     type="tel"
                     name="tlf"
                     id="tlf"
+                    aria-placeholder="Telefon"
                     class="w-full p-2 rounded border-gray-400 focus:outline-none focus:ring-0 focus:border-yellow-400"
                     required
                   />
@@ -785,6 +807,7 @@
                     type="email"
                     name="email"
                     id="email"
+                    aria-placeholder="Email"
                     class="w-full p-2 rounded border-gray-400 focus:outline-none focus:ring-0 focus:border-yellow-400"
                     required
                   />
@@ -797,6 +820,7 @@
                     id="message"
                     cols="40"
                     rows="4"
+                    aria-placeholder="Mesaj"
                     class="w-full rounded border-gray-400 focus:outline-none focus:ring-0 focus:border-yellow-400"
                     required
                   ></textarea>
@@ -886,7 +910,7 @@
         </div>
       </section>
     </main>
-    <footer class="pt-16">
+    <footer class="pt-16" itemscope="itemscope" itemtype="https://schema.org/WPFooter">
       <div id="salutul" class="mt-8 relative text-center">
         <h2
           class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
@@ -911,13 +935,15 @@
       </div>
       <div>
         <p class="text-center text-sm text-gray-500 m-8">
-          © 2022 -
-          <script>
-            document.write(new Date().getFullYear());
-          </script>
+          © 2022 - <span id="current-year">2022</span>
           Biserica Creștină Penticostală "Elim" | Toate drepturile rezervate
         </p>
       </div>
     </footer>
+
+    <script>
+      document.getElementById("current-year").innerHTML = new Date().getFullYear();
+    </script>
+
   </body>
 </html>
