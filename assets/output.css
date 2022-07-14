@@ -1521,16 +1521,16 @@ html {
   --tw-bg-opacity: 0.5;
 }
 
-.bg-\[url\(\'\/img\/slide\/Botez1\.webp\'\)\] {
-  background-image: url('/img/slide/Botez1.webp');
+.bg-\[url\(\'\.\/img\/slide\/Botez1\.webp\'\)\] {
+  background-image: url('./img/slide/Botez1.webp');
 }
 
-.bg-\[url\(\'\/img\/slide\/Botez2\.webp\'\)\] {
-  background-image: url('/img/slide/Botez2.webp');
+.bg-\[url\(\'\.\/img\/slide\/Botez2\.webp\'\)\] {
+  background-image: url('./img/slide/Botez2.webp');
 }
 
-.bg-\[url\(\'\/img\/slide\/tinerii\.webp\'\)\] {
-  background-image: url('/img/slide/tinerii.webp');
+.bg-\[url\(\'\.\/img\/slide\/tinerii\.webp\'\)\] {
+  background-image: url('./img/slide/tinerii.webp');
 }
 
 .bg-\[url\(\'\.\.\/img\/elim-salut-bg\.webp\'\)\] {
