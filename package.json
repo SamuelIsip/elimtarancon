@@ -16,7 +16,8 @@
     "babel-preset-minify": "^0.5.2"
   },
   "scripts": {
-    "buildbabel": "./node_modules/.bin/babel ./node_modules/flowbite/dist/flowbite.js ./node_modules/dompurify/dist/purify.js ./js/index.js --out-dir lib",
+    "buildbabel": "./node_modules/.bin/babel ./node_modules/flowbite/dist/flowbite.js ./node_modules/dompurify/dist/purify.js ./js/indexES6.js --out-dir lib",
+    "buildbabelmodules": "./node_modules/.bin/babel ./js/modules --out-dir lib/modules",
     "tailwind": "npx tailwindcss -i ./assets/input.css -o ./assets/output.css --minify"
   },
   "repository": {

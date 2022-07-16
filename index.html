@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ro_RO">
+<html lang="ro">
   <head>
     <!-- serach engines optimization -->
     <meta charset="UTF-8" />
@@ -11,7 +11,7 @@
     />
     <meta
       name="keywords"
-      content="Taracon, Biserica Elim, Biserica Elim Tarcon, Biserica Penticostala"
+      content="Taracon, Biserica Elim, Biserica Elim Tarancon, Biserica Penticostala, Biserica Penticostala Elim Tarancon"
     />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#e3a008" />
@@ -26,10 +26,6 @@
     <meta property="og:title" content="Biserica Penticostala Elim Tarancon" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="img/freedom.webp" />
-    <meta
-      property="og:description"
-      content="Pagina oficiala a Bisericii Elim din Tarancon, pentru informatii utile despre biserica, precum locatia, evenimente, date de contact."
-    />
 
     <meta
       name="google-site-verification"
@@ -41,8 +37,8 @@
     <link rel="stylesheet" href="./assets/output.css" />
     <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css" />
     <script defer src="./lib/scrollreveal.js"></script>
-    <script defer src="https://www.google.com/recaptcha/api.js"></script>
     <script defer src="./lib/purify.js"></script>
+    <script defer src="https://www.google.com/recaptcha/api.js"></script>
     <script defer src="./lib/index.js"></script>
     <script defer src="./lib/flowbite.js"></script>
 
@@ -52,6 +48,27 @@
     />
 
     <title>Biserica Penticostala Elim Tarancon</title>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Church",
+        "name": "Biserica Penticostala Elim Trancón",
+        "Description": "Pagina oficiala a Bisericii Elim din Tarancon, pentru informatii utile despre biserica, precum locatia, evenimente, date de contact.",
+        "email": "mailto:contact.elimtarancon@gmail.com",
+        "telephone": "(34) 647 770 153",
+        "url": "https://elimtarancon.es",
+        "openingHours": "Tu 20:00-21:00, Th 20:00-21:00, Su 10:00-12:00 18:00-20:00",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "SP",
+          "addressLocality": "Tarancón",
+          "addressRegion": "CU",
+          "postalCode": "16400",
+          "streetAddress": "C. Sta. Clara, 6"
+        },
+        "isAccessibleForFree": true
+      }
+    </script>
   </head>
   <body itemscope="itemscope" itemtype="https://schema.org/WebPage">
     <nav
@@ -79,6 +96,7 @@
           class="inline-flex items-center p-2 ml-3 text-sm text-white rounded-lg md:hidden focus:outline-none focus:ring-2"
           aria-controls="mobile-menu"
           aria-expanded="false"
+          aria-label="Mobile Menu"
         >
           <svg
             class="w-6 h-6"
@@ -174,7 +192,9 @@
               >
                 <div
                   class="bg-[#0000005c] absolute top-0 left-0 bottom-0 right-0"
-                ></div>
+                >
+                  <span aria-hidden="true" class="hidden">First Image</span>
+                </div>
               </div>
             </div>
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
@@ -183,7 +203,9 @@
               >
                 <div
                   class="bg-[#0000005c] absolute top-0 left-0 bottom-0 right-0"
-                ></div>
+                >
+                  <span aria-hidden="true" class="hidden">Second Image</span>
+                </div>
               </div>
             </div>
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
@@ -192,7 +214,9 @@
               >
                 <div
                   class="bg-[#0000005c] absolute top-0 left-0 bottom-0 right-0"
-                ></div>
+                >
+                  <span aria-hidden="true" class="hidden">Third Image</span>
+                </div>
               </div>
             </div>
           </div>
@@ -231,6 +255,7 @@
             class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
             data-carousel-prev
             title="Previous"
+            aria-label="Previous"
           >
             <span
               class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
@@ -257,6 +282,7 @@
             class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
             data-carousel-next
             title="Next"
+            aria-label="Next"
           >
             <span
               class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
@@ -442,6 +468,7 @@
                     src="./img/slujitori/pastor.webp"
                     alt="Pastor Image"
                     class="w-32 h-32 m-auto rounded-full"
+                    loading="lazy"
                   />
                   <h3 class="text-xl">Gavrilă Zăgrean</h3>
                   <h4 class="text-gray-800 italic mb-2">Pastor</h4>
@@ -459,6 +486,7 @@
                     src="./img/slujitori/prezbiter.webp"
                     alt="Prezbiter Image"
                     class="w-32 h-32 m-auto rounded-full"
+                    loading="lazy"
                   />
                   <h3 class="text-xl">Marius Nicorici</h3>
                   <h4 class="text-gray-800 italic mb-2">Prezbiter</h4>
@@ -476,6 +504,7 @@
                     src="./img/slujitori/diacon.webp"
                     alt="Diacon Image"
                     class="w-32 h-32 m-auto rounded-full"
+                    loading="lazy"
                   />
                   <h3 class="text-xl">Daniel Florea</h3>
                   <h4 class="text-gray-800 italic mb-2">Diacon</h4>
@@ -723,6 +752,7 @@
                 src="./img/evenimente/Mafiot3-1-2-350x400.webp"
                 alt="Eveniment Anterior"
                 class="hidden md:mx-4 md:block w-full md:w-[350px] h-[400px] shadow-2xl opacity-60 rounded-sm"
+                loading="lazy"
               />
             </div>
             <div>
@@ -730,6 +760,7 @@
                 src="./img/evenimente/Vasile-Tofan-1-350x450.webp"
                 alt="Eveniment Actual"
                 class="md:mx-4 block w-full md:w-[350px] h-[450px] md:h-[400px] lg:h-[450px] shadow-2xl rounded-sm"
+                loading="lazy"
               />
             </div>
             <div
@@ -794,6 +825,7 @@
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
                 class="w-full"
+                title="Locatia Bisericii in Google Maps"
               ></iframe>
             </div>
           </div>
@@ -887,6 +919,7 @@
                         disabled
                         type="button"
                         class="border rounded p-3 w-28 bg-green-400 text-center text-white inline-flex items-center"
+                        aria-label="Success Button"
                       >
                         <svg
                           role="status"
@@ -916,6 +949,7 @@
                         disabled
                         type="button"
                         class="border rounded p-3 w-28 bg-green-400 text-center text-white inline-flex items-center"
+                        aria-label="Success Button"
                       >
                         <svg
                           role="status"
