@@ -12,11 +12,12 @@
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.2",
-    "@babel/preset-env": "^7.18.2"
+    "@babel/preset-env": "^7.18.2",
+    "babel-preset-minify": "^0.5.2"
   },
   "scripts": {
-    "buildbabel": "./node_modules/.bin/babel ./node_modules/flowbite/dist/flowbite.js ./node_modules/dompurify/dist/purify.js ./node_modules/scrollreveal/dist/scrollreveal.min.js ./js/index.js --out-dir lib",
-    "tailwind": "npx tailwindcss -i ./assets/input.css -o ./assets/output.css"
+    "buildbabel": "./node_modules/.bin/babel ./node_modules/flowbite/dist/flowbite.js ./node_modules/dompurify/dist/purify.js ./js/index.js --out-dir lib",
+    "tailwind": "npx tailwindcss -i ./assets/input.css -o ./assets/output.css --minify"
   },
   "repository": {
     "type": "git",
