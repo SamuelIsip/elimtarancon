@@ -36,6 +36,10 @@
 
     <link rel="stylesheet" href="./assets/output.css" />
     <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
     <script defer src="./lib/scrollreveal.js"></script>
     <script defer src="./lib/purify.js"></script>
     <script defer src="https://www.google.com/recaptcha/api.js"></script>
@@ -125,7 +129,7 @@
         </button>
         <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
           <ul
-            class="flex flex-col mt-4 text-white md:flex-row md:space-x-8 md:mt-0 md:text-base"
+            class="flex flex-col mt-4 text-center text-white md:flex-row md:space-x-8 md:mt-0 md:text-base"
           >
             <li
               class="navLink md:border-b md:border-b-transparent md:hover:border-b md:hover:border-gray-100"
@@ -310,14 +314,16 @@
         id="verset_zilnic"
         class="my-14 bg-yellow-400 bg-opacity-70 relative before:clipPathBefore after:clipPathAfter"
       >
-        <div class="p-1 w-1/2 m-auto text-center italic verseOfDayContainer">
-          <h2 class="mb-2 not-italic text-lg font-medium">Versetul Zilei</h2>
-          <p id="verseOfDay">
+        <div class="p-1 w-1/2 m-auto text-center verseOfDayContainer">
+          <h2 class="mb-2 text-lg font-semibold">Versetul Zilei</h2>
+          <p id="verseOfDay" class="italic">
             Fiindcă atât de mult a iubit Dumnezeu lumea, că a dat pe singurul
             Lui Fiu, pentru ca oricine crede în El să nu piară, ci să aibă viaţa
             veşnică.
           </p>
-          <p id="verseOfDayReference">Ioan 3:16</p>
+          <p id="verseOfDayReference" class="text-gray-800 text-sm">
+            Ioan 3:16
+          </p>
         </div>
       </div>
       <section id="despre-noi" class="pt-16 page-wrapper">
@@ -342,10 +348,10 @@
             <ol class="relative border-l border-gray-200">
               <li class="despre_noi mb-10 ml-6">
                 <span
-                  class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white"
+                  class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-yellow-400 rounded-full ring-8 ring-white"
                 >
                   <svg
-                    class="w-3 h-3 text-emerald-600"
+                    class="w-3 h-3 text-white"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -386,10 +392,10 @@
               </li>
               <li class="despre_noi mb-10 ml-6">
                 <span
-                  class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white"
+                  class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-yellow-400 rounded-full ring-8 ring-white"
                 >
                   <svg
-                    class="w-3 h-3 text-emerald-600"
+                    class="w-3 h-3 text-white"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -421,10 +427,10 @@
               </li>
               <li class="despre_noi mb-10 ml-6">
                 <span
-                  class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white"
+                  class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-yellow-400 rounded-full ring-8 ring-white"
                 >
                   <svg
-                    class="w-3 h-3 text-emerald-600"
+                    class="w-3 h-3 text-white"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -796,7 +802,7 @@
                 <p
                   class="before:ubication md:before:bg-none md:after:ubication"
                 >
-                  C. Sta. Clara, 6, 16400 Tarancón, Cuenca, España
+                  C. Sta. Clara, 6, 16400 Tarancón, Cuenca
                 </p>
               </div>
               <div class="py-2 flex flex-row md:justify-end items-center">
