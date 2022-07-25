@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "Biserica Elim Tarancón",
+  "short_name": "ElimTarancon",
+  "start_url": "https://elimtarancon.es",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Pagina oficiala a Bisericii Elim din Tarancon, pentru informatii utile despre biserica, precum locatia, evenimente, date de contact.",
+  "icons": [
+    {
+      "src": "img/ElimDove.webp",
+      "sizes": "48x48",
+      "type": "image/webp"
+    },
+    {
+      "src": "img/ElimDove.webp",
+      "sizes": "72x72",
+      "type": "image/webp"
+    },
+    {
+      "src": "img/ElimDove.webp",
+      "sizes": "96x96",
+      "type": "image/webp"
+    }
+  ],
+  "categories": ["education", "entertainment", "social", "worship", "bible"],
+  "lang": "ro-RO"
+}
