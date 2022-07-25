@@ -58,9 +58,9 @@
     position: absolute;
     clip-path: polygon(0 0px, 0px 100%, 100% 100%, 100% 40px);
     height: 40px;
-    top: -40px;
+    top: -38px;
     content: "";
-    background-color: rgba(227, 160, 8, 0.7);
+    background-color: #e7bc5a;
   }
 
   .clipPathAfter {
@@ -68,9 +68,9 @@
     position: absolute;
     clip-path: polygon(0 -1px, 0% 40px, 100% 0%, 100% 0);
     height: 40px;
-    bottom: -40px;
+    bottom: -38px;
     content: "";
-    background-color: rgba(227, 160, 8, 0.7);
+    background-color: #e7bc5a;
   }
 
   .beforeTitle {
