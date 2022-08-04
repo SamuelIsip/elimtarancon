@@ -29,7 +29,7 @@
     position: absolute;
     clip-path: polygon(0 0px, 0px 100%, 100% 100%, 100% 40px);
     height: 40px;
-    top: -38px;
+    top: -40px;
     content: "";
     background-color: #e7bc5a;
   }
@@ -39,7 +39,7 @@
     position: absolute;
     clip-path: polygon(0 -1px, 0% 40px, 100% 0%, 100% 0);
     height: 40px;
-    bottom: -38px;
+    bottom: -40px;
     content: "";
     background-color: #e7bc5a;
   }
