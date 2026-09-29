@@ -9,16 +9,7 @@
     "scrollreveal": "^4.0.9",
     "tailwindcss": "^3.0.24"
   },
-  "devDependencies": {
-    "@babel/cli": "^7.17.10",
-    "@babel/core": "^7.18.2",
-    "@babel/preset-env": "^7.18.2",
-    "babel-preset-minify": "^0.5.2"
-  },
   "scripts": {
-    "buildbabel": "./node_modules/.bin/babel ./node_modules/flowbite/dist/flowbite.js ./node_modules/dompurify/dist/purify.js ./js/indexES6.js --out-dir lib",
-    "buildbabelmodules": "./node_modules/.bin/babel ./js/modules --out-dir lib/modules",
-    "buildbrowserifymodules": "browserify ./lib/indexES6.js > ./lib/index.js",
     "tailwind": "npx tailwindcss -i ./assets/input.css -o ./assets/output.css --minify"
   },
   "repository": {
