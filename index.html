@@ -31,7 +31,7 @@
 
     <link rel="icon" type="image/x-icon" href="img/freedom.webp" />
     <link rel="apple-touch-icon" href="img/freedom.webp" />
-    <link rel="stylesheet" href="./assets/output.css?v=2" />
+    <link rel="stylesheet" href="./assets/output.css?v=3" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
       rel="stylesheet"
@@ -39,7 +39,7 @@
 
     <script defer src="./lib/scrollreveal.js"></script>
     <script defer src="https://www.google.com/recaptcha/api.js"></script>
-    <script type="module" src="./js/index.js?v=3"></script>
+    <script type="module" src="./js/index.js?v=4"></script>
     <script defer src="./lib/flowbite.js"></script>
     <script type="application/ld+json">
       {
@@ -706,46 +706,61 @@
           >
             Evenimente
           </h2>
-          <div
-            class="w-full mt-16 flex flex-row justify-center items-center flex-wrap md:flex-row"
-          >
-            <div>
-              <img
-                src="./img/evenimente/Speranta350x450.webp"
-                alt="Eveniment Anterior"
-                class="hidden md:mx-4 md:block w-full md:w-[350px] h-[400px] shadow-2xl opacity-60 rounded-sm"
-                loading="lazy"
-              />
-            </div>
-            <div class="my-2 md:my-0">
-              <img
-                src="./img/evenimente/vechi350x450.webp"
-                alt="Eveniment Actual"
-                class="md:mx-4 block w-full md:w-[350px] h-[450px] md:h-[400px] lg:h-[450px] shadow-2xl rounded-sm"
-                loading="lazy"
-              />
-            </div>
-            <div
-              class="hidden relative z-10 md:w-[350px] h-[400px] shadow-2xl md:flex items-center justify-center"
+          <div class="events-carousel mt-16" data-events-carousel>
+            <button
+              type="button"
+              class="events-arrow events-arrow--prev"
+              data-events-prev
+              aria-label="Eveniment mai nou"
+              title="Eveniment mai nou"
             >
-              <div
-                class="absolute w-full h-full z-20 bg-gray-300 opacity-60 rounded-sm"
-              >
-                <span class="hidden">Eveniment</span>
-              </div>
-              <div class="flex flex-col z-10">
-                <div>
-                  <svg
-                    xmlns="https://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                  >
-                    <path
-                      d="M447.1 32h-384C28.64 32-.0091 60.65-.0091 96v320c0 35.35 28.65 64 63.1 64h384c35.35 0 64-28.65 64-64V96C511.1 60.65 483.3 32 447.1 32zM111.1 96c26.51 0 48 21.49 48 48S138.5 192 111.1 192s-48-21.49-48-48S85.48 96 111.1 96zM446.1 407.6C443.3 412.8 437.9 416 432 416H82.01c-6.021 0-11.53-3.379-14.26-8.75c-2.73-5.367-2.215-11.81 1.334-16.68l70-96C142.1 290.4 146.9 288 152 288s9.916 2.441 12.93 6.574l32.46 44.51l93.3-139.1C293.7 194.7 298.7 192 304 192s10.35 2.672 13.31 7.125l128 192C448.6 396 448.9 402.3 446.1 407.6z"
-                    />
-                  </svg>
-                </div>
-                <p>URMEAZĂ...</p>
-              </div>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            <ul
+              class="events-track"
+              data-events-track
+              tabindex="0"
+              aria-label="Evenimente, de la cel mai nou la cel mai vechi"
+            >
+              <!--
+                Newest event first. To add a new event, put its image in
+                img/evenimente and add one line at the top of this list.
+              -->
+              <li class="events-slide"><img src="./img/evenimente/vechi350x450.webp" alt="Seara de cântări vechi și rugăciune, sâmbătă 11 aprilie, ora 19:00" /></li>
+              <li class="events-slide"><img src="./img/evenimente/Speranta350x450.webp" alt="Grupul Speranța, 28 februarie, ora 19:00" loading="lazy" /></li>
+              <li class="events-slide"><img src="./img/evenimente/Cuvantul350x450.webp" alt="Importanța Cuvântului, seri de studiu în februarie" loading="lazy" /></li>
+              <li class="events-slide"><img src="./img/evenimente/Iacoban350x450.webp" alt="Slujbă divină duminică seara, 20 iulie, ora 18:00" loading="lazy" /></li>
+              <li class="events-slide"><img src="./img/evenimente/Nichescu350x450.webp" alt="Serviciu divin: Mărturie, invitat Sergiu Nichescu, sâmbătă 26 aprilie, ora 20:00" loading="lazy" /></li>
+              <li class="events-slide"><img src="./img/evenimente/Tineret350x450.webp" alt="Seri de tineret în februarie" loading="lazy" /></li>
+              <li class="events-slide"><img src="./img/evenimente/StaruintaDS-350x450.webp" alt="Seară de stăruință pentru botez și umplere cu Duhul Sfânt, 25 și 26 octombrie 2024" loading="lazy" /></li>
+              <li class="events-slide"><img src="./img/evenimente/Ograda350x450.webp" alt="Seară de rugăciune cu Remus Ogradă, sâmbătă 12 octombrie, ora 19:00" loading="lazy" /></li>
+              <li class="events-slide"><img src="./img/evenimente/Familia350x450.webp" alt="Seri despre familie în septembrie" loading="lazy" /></li>
+              <li class="events-slide"><img src="./img/evenimente/Conferinta350x450.webp" alt="Puterea lui Dumnezeu în slăbiciunea ta, 19 noiembrie, ora 18:00" loading="lazy" /></li>
+              <li class="events-slide"><img src="./img/evenimente/Vasile-Tofan-1-350x450.webp" alt="Vasile Tofan: Eram orb, dar acum văd, 19 iunie 2022, ora 18:00" loading="lazy" /></li>
+              <li class="events-slide"><img src="./img/evenimente/Mafiot3-1-2-350x400.webp" alt="De la fiul unui mafiot la Fiul lui Dumnezeu, Gaetano Amato, 11 iunie 2022" loading="lazy" /></li>
+            </ul>
+            <button
+              type="button"
+              class="events-arrow events-arrow--next"
+              data-events-next
+              aria-label="Eveniment mai vechi"
+              title="Eveniment mai vechi"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+            <div class="flex flex-col items-center gap-2">
+              <div class="events-dots mb-1" data-events-dots></div>
+              <p class="text-sm text-gray-600" data-events-counter aria-live="polite">
+                1 / 12
+              </p>
+              <p class="text-sm text-gray-500">
+                <span class="sm:hidden">Glisați pentru evenimentele anterioare</span>
+                <span class="hidden sm:inline">Folosiți săgețile pentru evenimentele anterioare</span>
+              </p>
             </div>
           </div>
         </div>

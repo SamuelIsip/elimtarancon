@@ -106,4 +106,146 @@
   .navLink {
     transition: 0.5s;
   }
+
+  /* Evenimente carousel: newest poster centred, older ones to the right */
+  .events-carousel {
+    --events-slide: 350px;
+    position: relative;
+    /* Reach past the section padding (p-9) so the side posters can peek in */
+    margin-inline: -2.25rem;
+  }
+
+  .events-track {
+    position: relative;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 1rem calc(50% - var(--events-slide) / 2) 2.75rem;
+    list-style: none;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  .events-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .events-track:focus-visible {
+    outline: 2px solid #e3a008;
+    outline-offset: 4px;
+  }
+
+  .events-slide {
+    flex: 0 0 var(--events-slide);
+    scroll-snap-align: center;
+    opacity: 0.6;
+    transform: scale(0.92);
+    transition: opacity 0.3s, transform 0.3s;
+    cursor: pointer;
+  }
+
+  .events-slide.is-active {
+    opacity: 1;
+    transform: none;
+    cursor: default;
+  }
+
+  .events-slide img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 7 / 9;
+    object-fit: contain;
+    background-color: rgb(229 231 235);
+    border-radius: 0.125rem;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  }
+
+  .events-arrow {
+    position: absolute;
+    top: calc(50% - 1.5rem);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    background-color: rgb(255 255 255 / 0.9);
+    color: #9c5120;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+    transform: translateY(-50%);
+    transition: background-color 0.2s, opacity 0.2s;
+  }
+
+  .events-arrow:hover {
+    background-color: #c27803;
+    color: white;
+  }
+
+  .events-arrow:focus-visible {
+    outline: 2px solid #e3a008;
+    outline-offset: 2px;
+  }
+
+  .events-arrow:disabled {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .events-arrow--prev {
+    left: calc(50% - var(--events-slide) / 2 - 1.5rem);
+  }
+
+  .events-arrow--next {
+    right: calc(50% - var(--events-slide) / 2 - 1.5rem);
+  }
+
+  .events-dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .events-dot {
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 9999px;
+    background-color: rgb(209 213 219);
+    transition: width 0.3s, background-color 0.3s;
+  }
+
+  .events-dot[aria-current="true"] {
+    width: 1.75rem;
+    background-color: #e3a008;
+  }
+
+  @media (max-width: 640px) {
+    .events-carousel {
+      --events-slide: 72vw;
+    }
+
+    .events-track {
+      gap: 0.75rem;
+    }
+
+    /* On phones people swipe; the arrows would cover the poster */
+    .events-arrow {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .events-track {
+      scroll-behavior: auto;
+    }
+
+    .events-slide,
+    .events-dot {
+      transition: none;
+    }
+  }
 }
