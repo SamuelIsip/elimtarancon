@@ -1,19 +1,67 @@
-export async function submitForm(e) {
-  e.preventDefault();
-  const data = sanitazeData(Object.fromEntries(new FormData(e.target)));
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mqpangpy";
+const CAPTCHA_FIELD = "g-recaptcha-response";
 
-  if (dataValidation(data) == false) return false;
+const CAPTCHA_ERROR = {
+  field: "captcha",
+  message: "Va rugam, verificati ca nu sunteti un robot!",
+};
+const NETWORK_ERROR = {
+  message: "Mesajul nu a putut fi trimis. Verificati conexiunea la internet!",
+};
+const SEND_ERROR = {
+  message: "Mesajul nu a putut fi trimis. Incercati din nou!",
+};
 
-  if ((await sendToFormspree(data)) == false) return false;
+export function initContactForm(form) {
+  const view = createView();
 
-  e.target.reset();
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+
+    view.clearErrors();
+    const invalid = validateContact(data);
+    if (invalid) return view.showError(invalid);
+
+    view.setStatus("sending");
+    const error = await sendToFormspree(data);
+    // A reCAPTCHA token can only be verified once, so request a new one
+    grecaptcha.reset();
+
+    if (error) {
+      view.setStatus("idle");
+      return view.showError(error);
+    }
+
+    form.reset();
+    view.setStatus("sent");
+  });
 }
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/mqpangpy";
+// Returns the first problem as { field, message }, or null when the data is valid.
+export function validateContact(data) {
+  if (!data[CAPTCHA_FIELD]) return CAPTCHA_ERROR;
+
+  return (
+    validateName(data.name) ||
+    validateEmail(data.email) ||
+    validateTlf(data.tlf) ||
+    validateMessage(data.message) ||
+    null
+  );
+}
+
+// Turns a Formspree error response body into { field, message }.
+export function readFormspreeError(body) {
+  const error = body.errors?.[0];
+  if (error?.code?.includes("RECAPTCHA") || body.error?.includes("reCAPTCHA"))
+    return CAPTCHA_ERROR;
+
+  if (error?.message) return { field: error.field, message: error.message };
+  return SEND_ERROR;
+}
 
 async function sendToFormspree(data) {
-  toggleButton();
-
   let response;
   try {
     response = await fetch(FORMSPREE_ENDPOINT, {
@@ -25,128 +73,66 @@ async function sendToFormspree(data) {
       body: JSON.stringify(data),
     });
   } catch {
-    hideSubmitInfo();
-    return errorMessage("Mesajul nu a putut fi trimis. Verificati conexiunea la internet!");
-  } finally {
-    // A reCAPTCHA token can only be verified once, so request a new one
-    grecaptcha.reset();
+    return NETWORK_ERROR;
   }
 
-  if (response.ok) {
-    toggleButton();
-    setTimeout(() => {
-      hideSubmitInfo();
-    }, 5000);
-    return true;
-  }
+  if (response.ok) return null;
+  return readFormspreeError(await response.json().catch(() => ({})));
+}
 
-  hideSubmitInfo();
-  const result = await response.json().catch(() => ({}));
-  const error = result.errors?.[0];
-  if (error?.code?.includes("RECAPTCHA") || result.error?.includes("reCAPTCHA"))
-    return errorMessage("Va rugam, verificati ca nu sunteti un robot!", "captcha");
+function validateName(name) {
+  if (!name) return { field: "name", message: "Trebuie sa introduceti un Nume!" };
+  if (name.length <= 3) return { field: "name", message: "Numele este prea scurt!" };
+}
 
-  return errorMessage(
-    error?.message || "Mesajul nu a putut fi trimis. Incercati din nou!",
-    error?.field
+function validateEmail(email) {
+  if (!email) return { field: "email", message: "Trebuie sa introduceti un email!" };
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+    return { field: "email", message: "Introduceti o adresa de email corecta!" };
+}
+
+function validateTlf(tlf) {
+  if (!tlf) return { field: "tlf", message: "Trebuie sa introduceti un numar de Tlf!" };
+  if (!/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/.test(tlf) || tlf.length < 9)
+    return { field: "tlf", message: "Introduceti un numar de Tlf. corect! Ex: 789456123" };
+}
+
+function validateMessage(message) {
+  if (!message) return { field: "message", message: "Trebuie sa introduceti un mesaj!" };
+  if (message.length <= 5) return { field: "message", message: "Mesajul este prea scurt!" };
+  if (message.length >= 260) return { field: "message", message: "Mesajul este prea lung!" };
+}
+
+// The only code that touches the page.
+function createView() {
+  const errorBox = document.getElementById("message_error_container");
+  const errorText = document.getElementById("error_message");
+  const loading = document.getElementById("submit_loading");
+  const sent = document.getElementById("submit_ok");
+  const fields = ["captcha", "name", "tlf", "email", "message"].map((id) =>
+    document.getElementById(id)
   );
-}
+  let idleTimer;
 
-function dataValidation(data) {
-  const response = grecaptcha.getResponse();
-  if (response.length == 0)
-    return errorMessage("Va rugam, verificati ca nu sunteti un robot!", "captcha");
-
-  document.getElementById("captcha").style.borderColor = "rgb(156 163 175)";
-
-  if (validateName(data) == false) return false;
-  if (validateEmail(data) == false) return false;
-  if (validateTlf(data) == false) return false;
-  if (validateMessage(data) == false) return false;
-  document.getElementById("message_error_container").style.display = "none";
-  return true;
-}
-
-function validateName(data) {
-  // Name
-  if (data.name == "")
-    return errorMessage("Trebuie sa introduceti un Nume!", "name");
-
-  if (data.name.length <= 3)
-    return errorMessage("Numele este prea scurt!", "name");
-
-  document.getElementById("name").style.borderColor = "rgb(156 163 175)";
-}
-
-function validateTlf(data) {
-  // Phone Number
-  if (data.tlf == "")
-    return errorMessage("Trebuie sa introduceti un numar de Tlf!", "tlf");
-
-  const regexPhone = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
-  if (!regexPhone.test(data.tlf) || data.tlf.length < 9)
-    return errorMessage("Introduceti un numar de Tlf. corect! Ex: 789456123", "tlf");
-
-  document.getElementById("tlf").style.borderColor = "rgb(156 163 175)";
-}
-
-function validateEmail(data) {
-  // Email
-  if (data.email == "")
-    return errorMessage("Trebuie sa introduceti un email!", "email");
-
-  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!regexEmail.test(data.email))
-    return errorMessage("Introduceti o adresa de email corecta!", "email");
-
-  document.getElementById("email").style.borderColor = "rgb(156 163 175)";
-}
-
-function validateMessage(data) {
-  // Message
-  if (data.message == "")
-    return errorMessage("Trebuie sa introduceti un mesaj!", "message");
-
-  if (data.message.length <= 5)
-    return errorMessage("Mesajul este prea scurt!", "message");
-
-  if (data.message.length >= 260)
-    return errorMessage("Mesajul este prea lung!", "message");
-
-  document.getElementById("message").style.borderColor = "rgb(156 163 175)";
-}
-
-function errorMessage(message, idElement) {
-  const element = idElement && document.getElementById(idElement);
-  if (element) element.style.borderColor = "red";
-  document.getElementById("message_error_container").style.display = "block";
-  document.getElementById("error_message").innerText = message;
-  return false;
-}
-
-function sanitazeData(data) {
-  return {
-    name: DOMPurify.sanitize(data.name),
-    email: DOMPurify.sanitize(data.email),
-    tlf: DOMPurify.sanitize(data.tlf),
-    message: DOMPurify.sanitize(data.message),
-    "g-recaptcha-response": DOMPurify.sanitize(data["g-recaptcha-response"]),
-  };
-}
-
-function toggleButton() {
-  const loading = document.querySelector("#submit_loading");
-  const ok = document.querySelector("#submit_ok");
-  if (loading.style.visibility === "hidden") {
-    loading.style.visibility = "visible";
-    ok.style.visibility = "hidden";
-  } else {
-    ok.style.visibility = "visible";
-    loading.style.visibility = "hidden";
+  function setStatus(status) {
+    clearTimeout(idleTimer);
+    loading.style.visibility = status === "sending" ? "visible" : "hidden";
+    sent.style.visibility = status === "sent" ? "visible" : "hidden";
+    if (status === "sent") idleTimer = setTimeout(() => setStatus("idle"), 5000);
   }
-}
 
-function hideSubmitInfo() {
-  document.querySelector("#submit_loading").style.visibility = "hidden";
-  document.querySelector("#submit_ok").style.visibility = "hidden";
+  return {
+    setStatus,
+    clearErrors() {
+      // Clearing the inline color restores the Tailwind border and focus styles
+      fields.forEach((field) => (field.style.borderColor = ""));
+      errorBox.style.display = "none";
+    },
+    showError({ field, message }) {
+      const element = field && document.getElementById(field);
+      if (element) element.style.borderColor = "red";
+      errorBox.style.display = "block";
+      errorText.innerText = message;
+    },
+  };
 }
