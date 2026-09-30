@@ -31,7 +31,7 @@
 
     <link rel="icon" type="image/x-icon" href="img/freedom.webp" />
     <link rel="apple-touch-icon" href="img/freedom.webp" />
-    <link rel="stylesheet" href="./assets/output.css?v=6" />
+    <link rel="stylesheet" href="./assets/output.css?v=7" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
       rel="stylesheet"
@@ -39,7 +39,7 @@
 
     <script defer src="./lib/scrollreveal.js"></script>
     <script defer src="https://www.google.com/recaptcha/api.js"></script>
-    <script type="module" src="./js/index.js?v=4"></script>
+    <script type="module" src="./js/index.js?v=5"></script>
     <script defer src="./lib/flowbite.js"></script>
     <script type="application/ld+json">
       {
@@ -64,7 +64,7 @@
       }
     </script>
 
-    <title>Biserica Penticostală Elim Tarancón</title>
+    <title data-lng="page.title">Biserica Penticostală Elim Tarancón</title>
   </head>
   <body itemscope="itemscope" itemtype="https://schema.org/WebPage">
     <nav
@@ -86,6 +86,19 @@
             >ELIM</span
           >
         </a>
+        <div class="flex items-center md:order-last md:ml-8">
+          <button
+            type="button"
+            role="switch"
+            aria-checked="false"
+            aria-label="Español"
+            title="Română / Español"
+            class="lang-switch"
+            data-language-switch
+          >
+            <span class="lang-switch-option" data-lang-option="ro" aria-hidden="true">RO</span>
+            <span class="lang-switch-option" data-lang-option="es" aria-hidden="true">ES</span>
+          </button>
         <button
           data-collapse-toggle="mobile-menu"
           type="button"
@@ -107,7 +120,8 @@
             ></path>
           </svg>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+        </div>
+        <div class="hidden w-full md:block md:w-auto md:ml-auto" id="mobile-menu">
           <ul
             class="flex flex-col mt-4 text-xl text-center text-white md:flex-row md:space-x-8 md:mt-0 md:text-base"
           >
@@ -117,6 +131,8 @@
               <a
                 href="#"
                 title="Acasă"
+                data-lng="nav.home"
+                data-lng-title="nav.home"
                 class="block py-2 pr-4 pl-3 border-b border-gray-100 md:border-transparent"
                 >Acasă</a
               >
@@ -127,6 +143,8 @@
               <a
                 href="#despre-noi"
                 title="Despre noi"
+                data-lng="nav.about"
+                data-lng-title="nav.about"
                 class="block py-2 pr-4 pl-3 border-b border-gray-100 md:border-transparent"
                 >Despre noi</a
               >
@@ -136,6 +154,7 @@
             >
               <a
                 href="#program"
+                data-lng="nav.program"
                 class="block py-2 pr-4 pl-3 border-b border-gray-100 md:border-transparent"
                 >Program</a
               >
@@ -146,6 +165,8 @@
               <a
                 href="#contact"
                 title="Contact"
+                data-lng="nav.contact"
+                data-lng-title="nav.contact"
                 class="block py-2 pr-4 pl-3 border-b border-gray-100 md:border-transparent"
                 >Contact</a
               >
@@ -167,7 +188,7 @@
             class="text-white absolute z-30 top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2"
           >
             <h1 class="tracking-wide font-mono flex flex-col text-center">
-              <span class="text-shadow text-4xl xl:text-6xl"
+              <span data-lng="hero.church" class="text-shadow text-4xl xl:text-6xl"
                 >Biserica Penticostală</span
               ><span class="text-shadow text-6xl mt-8 xl:text-8xl">Elim</span
               ><span class="text-shadow text-2xl xl:text-4xl">Tarancón</span>
@@ -338,7 +359,8 @@
         class="my-14 bg-[#e7bc5a] relative before:clipPathBefore after:clipPathAfter"
       >
         <div class="p-2 px-6 w-full md:w-1/2 m-auto text-center z-0">
-          <h2 class="mb-2 text-lg font-semibold">Versetul Zilei</h2>
+          <h2 class="mb-2 text-lg font-semibold" data-lng="verse.title">Versetul Zilei</h2>
+          <div data-verse="ro">
           <p id="verseOfDay" class="italic">
             Fiindcă atât de mult a iubit Dumnezeu lumea, că a dat pe singurul
             Lui Fiu, pentru ca oricine crede în El să nu piară, ci să aibă viaţa
@@ -347,17 +369,28 @@
           <p id="verseOfDayReference" class="text-gray-800 text-sm">
             Ioan 3:16
           </p>
+          </div>
+          <div data-verse="es" hidden>
+            <p id="verseOfDayES" class="italic">
+              Porque tanto amó Dios al mundo que dio a su Hijo unigénito, para
+              que todo el que cree en él no se pierda, sino que tenga vida eterna.
+            </p>
+            <p id="verseOfDayReferenceES" class="text-gray-800 text-sm">
+              Juan 3:16
+            </p>
+          </div>
+          <template id="dailyVersesWrapper"></template>
         </div>
       </div>
       <section id="despre-noi" class="pt-16 page-wrapper">
         <div class="flex flex-col p-9 page-wrapper-content">
           <div class="text-center relative">
-            <h2
+            <h2 data-lng="about.title"
               class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
             >
               Despre noi
             </h2>
-            <p class="my-16 max-w-3xl mx-auto leading-relaxed">
+            <p data-lng="about.intro" class="my-16 max-w-3xl mx-auto leading-relaxed">
               Biserica Penticostală Elim din Tarancón își desfășoară activitatea
               încă din anul 2001, începând această lucrare cu scopul de-a
               onora pe singurul Dumnezeu, cel care a trimis pe fiul său, Isus
@@ -386,17 +419,17 @@
                     ></path>
                   </svg>
                 </span>
-                <h3
+                <h3 data-lng="about.item1.title"
                   class="flex items-center mb-1 text-lg font-semibold text-gray-900"
                 >
                   Deschiderea bisericii
                 </h3>
-                <p
+                <p data-lng="about.item1.date"
                   class="block mb-2 text-sm font-normal leading-none text-gray-500"
                 >
                   Anul 2001
                 </p>
-                <p class="mb-4 text-base font-normal text-gray-600 leading-relaxed">
+                <p data-lng="about.item1.text" class="mb-4 text-base font-normal text-gray-600 leading-relaxed">
                   Printre românii care se aflau în Tarancón și în satele
                   apropiate în preajma anului 2001, erau și un număr mic de
                   credincioși care duceau dorul de părtășie și întâlnire cu
@@ -430,17 +463,17 @@
                     ></path>
                   </svg>
                 </span>
-                <h3
+                <h3 data-lng="about.item2.title"
                   class="flex items-center mb-1 text-lg font-semibold text-gray-900"
                 >
                   Primul Botez
                 </h3>
-                <p
+                <p data-lng="about.item2.date"
                   class="block mb-2 text-sm font-normal leading-none text-gray-500"
                 >
                   Anul 2003
                 </p>
-                <p class="mb-4 text-base font-normal text-gray-600 leading-relaxed">
+                <p data-lng="about.item2.text" class="mb-4 text-base font-normal text-gray-600 leading-relaxed">
                   Primul botez s-a desfășurat în râul Extremera în Iulie din
                   anul 2003. <br />
                   După care au mai urmat și altele prin care s-au adaus tot mai
@@ -465,17 +498,17 @@
                     ></path>
                   </svg>
                 </span>
-                <h3
+                <h3 data-lng="about.item3.title"
                   class="flex items-center mb-1 text-lg font-semibold text-gray-900"
                 >
                   Propasirea bisericii
                 </h3>
-                <p
+                <p data-lng="about.item3.date"
                   class="block mb-2 text-sm font-normal leading-none text-gray-500"
                 >
                   Actualitate
                 </p>
-                <p class="mb-4 text-base font-normal text-gray-600 leading-relaxed">
+                <p data-lng="about.item3.text" class="mb-4 text-base font-normal text-gray-600 leading-relaxed">
                   Prin Harul Domnului, biserica crește în continuare și
                   desfășoară activități de studiu biblic, cântări cu diferite
                   grupe de copii și tineri, cântări cu orchestra, seară de
@@ -503,7 +536,7 @@
                   <h4 class="text-gray-800 italic mb-2">Pastor</h4>
                 </div>
                 <div class="flipCard_back font-bold">
-                  <h2 class="text-lg">Număr de contact</h2>
+                  <h2 data-lng="about.contactNumber" class="text-lg">Număr de contact</h2>
                   <h3 class="italic text-base">+34 678 66 89 77</h3>
                 </div>
               </div>
@@ -518,10 +551,10 @@
                     loading="lazy"
                   />
                   <h3 class="text-xl">Daniel Florea</h3>
-                  <h4 class="text-gray-800 italic mb-2">Diacon</h4>
+                  <h4 data-lng="about.deacon" class="text-gray-800 italic mb-2">Diacon</h4>
                 </div>
                 <div class="flipCard_back font-bold">
-                  <h2 class="text-lg">Număr de contact</h2>
+                  <h2 data-lng="about.contactNumber" class="text-lg">Număr de contact</h2>
                   <h3 class="italic text-base">+34 610 542 465</h3>
                 </div>
               </div>
@@ -531,7 +564,7 @@
       </section>
       <section id="program" class="pt-16 page-wrapper">
         <div class="relative text-center p-9 page-wrapper-content">
-          <h2
+          <h2 data-lng="program.title"
             class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
           >
             Program
@@ -542,9 +575,9 @@
             <div
               class="p-4 w-full xl:w-1/5 min-h-[16rem] rounded border border-[#9c5120] border-t-4 border-t-yellow-400 xl:border-r-transparent shadow-xl flex flex-col justify-center xl:justify-start xl:pt-6"
             >
-              <h3 class="text-2xl mb-2 font-semibold">Marți</h3>
+              <h3 data-lng="program.tuesday" class="text-2xl mb-2 font-semibold">Marți</h3>
               <div class="pt-4">
-                <p class="text-xl mb-2">Serviciu Divin</p>
+                <p data-lng="program.service" class="text-xl mb-2">Serviciu Divin</p>
                 <div class="flex flex-row justify-center">
                   <span class="flex items-center mr-2"
                     ><svg
@@ -569,9 +602,9 @@
             <div
               class="p-4 w-full xl:w-1/5 min-h-[16rem] rounded border border-[#9c5120] border-t-4 border-t-yellow-400 shadow-xl flex flex-col justify-center xl:justify-start xl:pt-6"
             >
-              <h3 class="text-2xl mb-2 font-semibold">Joi</h3>
+              <h3 data-lng="program.thursday" class="text-2xl mb-2 font-semibold">Joi</h3>
               <div class="pt-4">
-                <p class="text-xl mb-2">Serviciu Divin</p>
+                <p data-lng="program.service" class="text-xl mb-2">Serviciu Divin</p>
                 <div class="flex flex-row justify-center">
                   <span class="flex items-center mr-2"
                     ><svg
@@ -596,9 +629,9 @@
             <div
               class="p-4 w-full xl:w-1/5 min-h-[16rem] rounded border border-[#9c5120] border-t-4 border-t-yellow-400 xl:border-l-transparent shadow-xl flex flex-col justify-center xl:justify-start xl:pt-6"
             >
-              <h3 class="text-2xl mb-2 font-semibold">Duminică</h3>
+              <h3 data-lng="program.sunday" class="text-2xl mb-2 font-semibold">Duminică</h3>
               <div class="pt-4">
-                <p class="text-xl mb-2">Dimineața</p>
+                <p data-lng="program.morning" class="text-xl mb-2">Dimineața</p>
                 <div class="flex flex-row justify-center">
                   <span class="flex items-center mr-2"
                     ><svg
@@ -620,7 +653,7 @@
                 </div>
               </div>
               <div class="pt-4">
-                <p class="text-xl mb-2">Seara</p>
+                <p data-lng="program.evening" class="text-xl mb-2">Seara</p>
                 <div class="flex flex-row justify-center">
                   <span class="flex items-center mr-2"
                     ><svg
@@ -645,12 +678,12 @@
             <div
               class="p-4 w-full xl:w-1/5 min-h-[16rem] rounded border border-[#9c5120] border-t-4 border-t-yellow-400 xl:border-l-transparent shadow-xl flex flex-col justify-center xl:justify-start xl:pt-6"
             >
-              <h3 class="text-2xl mb-2 font-semibold">Tineri & Copii</h3>
+              <h3 data-lng="program.youth" class="text-2xl mb-2 font-semibold">Tineri & Copii</h3>
               <div class="flex flex-row justify-around">
                 <div>
                   <div class="pt-4">
-                    <p class="text-xl mb-2">Sâmbătă</p>
-                    <p>Repetiții Orchestra</p>
+                    <p data-lng="program.saturday" class="text-xl mb-2">Sâmbătă</p>
+                    <p data-lng="program.orchestra">Repetiții Orchestra</p>
                     <div class="flex flex-row justify-center">
                       <span class="flex items-center mr-2"
                         ><svg
@@ -672,8 +705,8 @@
                     </div>
                   </div>
                   <div class="pt-4">
-                    <p class="text-xl mb-2">Duminică</p>
-                    <p>Repetiții Tineri</p>
+                    <p data-lng="program.sunday" class="text-xl mb-2">Duminică</p>
+                    <p data-lng="program.youthRehearsal">Repetiții Tineri</p>
                     <div class="flex flex-row justify-center">
                       <span class="flex items-center mr-2"
                         ><svg
@@ -702,7 +735,7 @@
       </section>
       <section id="evenimente" class="pt-16 page-wrapper">
         <div class="relative text-center p-9 page-wrapper-content">
-          <h2
+          <h2 data-lng="events.title"
             class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
           >
             Evenimente
@@ -712,8 +745,8 @@
               type="button"
               class="events-arrow events-arrow--prev"
               data-events-prev
-              aria-label="Eveniment mai nou"
-              title="Eveniment mai nou"
+              aria-label="Eveniment mai nou" data-lng-aria-label="events.newer"
+              title="Eveniment mai nou" data-lng-title="events.newer"
             >
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -724,6 +757,7 @@
               data-events-track
               tabindex="0"
               aria-label="Evenimente, de la cel mai nou la cel mai vechi"
+              data-lng-aria-label="events.list"
             >
               <!--
                 Newest event first. To add a new event, put its image in
@@ -747,8 +781,8 @@
               type="button"
               class="events-arrow events-arrow--next"
               data-events-next
-              aria-label="Eveniment mai vechi"
-              title="Eveniment mai vechi"
+              aria-label="Eveniment mai vechi" data-lng-aria-label="events.older"
+              title="Eveniment mai vechi" data-lng-title="events.older"
             >
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -758,8 +792,8 @@
               <div class="events-dots mb-1" data-events-dots></div>
               <p class="text-sm text-gray-600" data-events-counter aria-live="polite"></p>
               <p class="text-sm text-gray-500">
-                <span class="sm:hidden">Glisați pentru evenimentele anterioare</span>
-                <span class="hidden sm:inline">Folosiți săgețile pentru evenimentele anterioare</span>
+                <span data-lng="events.hintSwipe" class="sm:hidden">Glisați pentru evenimentele anterioare</span>
+                <span data-lng="events.hintArrows" class="hidden sm:inline">Folosiți săgețile pentru evenimentele anterioare</span>
               </p>
             </div>
           </div>
@@ -772,7 +806,7 @@
           <div
             class="relative text-center w-full md:text-right md:border-r-2 md:pr-6 md:w-1/2"
           >
-            <h2
+            <h2 data-lng="contact.title"
               class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
             >
               Informații de Contact
@@ -865,13 +899,14 @@
                 referrerpolicy="no-referrer-when-downgrade"
                 class="w-full"
                 title="Locatia Bisericii in Google Maps"
+                data-lng-title="contact.map"
               ></iframe>
             </div>
           </div>
           <div
             class="relative w-full pt-9 text-center md:text-left md:pl-6 md:w-1/2 md:pt-0"
           >
-            <h2
+            <h2 data-lng="form.title"
               class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
             >
               Formular de Contact
@@ -883,7 +918,7 @@
                 id="contact-form"
               >
                 <div class="flex flex-col items-start pb-4 text-sm">
-                  <label for="name"
+                  <label data-lng="form.name" for="name"
                     >Nume <span class="text-red-600">*</span></label
                   >
 
@@ -892,36 +927,39 @@
                     name="name"
                     id="name"
                     aria-placeholder="Nume"
+                    data-lng-aria-placeholder="form.namePlaceholder"
                     class="w-full p-2 rounded border-gray-400 focus:outline-none focus:ring-0 focus:border-yellow-400"
                     required
                   />
                 </div>
                 <div class="flex flex-col items-start pb-4 text-sm">
-                  <label for="tlf"
+                  <label data-lng="form.phone" for="tlf"
                     >Telefon <span class="text-red-600">*</span></label
                   ><input
                     type="tel"
                     name="tlf"
                     id="tlf"
                     aria-placeholder="Telefon"
+                    data-lng-aria-placeholder="form.phonePlaceholder"
                     class="w-full p-2 rounded border-gray-400 focus:outline-none focus:ring-0 focus:border-yellow-400"
                     required
                   />
                 </div>
                 <div class="flex flex-col items-start pb-4 text-sm">
-                  <label for="email"
+                  <label data-lng="form.email" for="email"
                     >Email <span class="text-red-600">*</span></label
                   ><input
                     type="email"
                     name="email"
                     id="email"
                     aria-placeholder="Email"
+                    data-lng-aria-placeholder="form.emailPlaceholder"
                     class="w-full p-2 rounded border-gray-400 focus:outline-none focus:ring-0 focus:border-yellow-400"
                     required
                   />
                 </div>
                 <div class="flex flex-col items-start pb-4 text-sm">
-                  <label for="message"
+                  <label data-lng="form.message" for="message"
                     >Mesaj <span class="text-red-600">*</span></label
                   ><textarea
                     name="message"
@@ -929,6 +967,7 @@
                     cols="40"
                     rows="4"
                     aria-placeholder="Mesaj"
+                    data-lng-aria-placeholder="form.messagePlaceholder"
                     class="w-full rounded border-gray-400 focus:outline-none focus:ring-0 focus:border-yellow-400"
                     required
                   ></textarea>
@@ -949,6 +988,7 @@
                     <input
                       type="submit"
                       value="Trimite"
+                      data-lng-value="form.send"
                       class="border rounded p-3 cursor-pointer w-28 bg-yellow-500 font-semibold text-center text-white hover:bg-yellow-600"
                     />
                   </div>
@@ -1009,7 +1049,7 @@
                             d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                           ></path>
                         </svg>
-                        <p>Trimis!</p>
+                        <p data-lng="form.sent">Trimis!</p>
                       </button>
                     </div>
                   </div>
@@ -1026,7 +1066,7 @@
       itemtype="https://schema.org/WPFooter"
     >
       <div id="salutul" class="mt-8 relative text-center">
-        <h2
+        <h2 data-lng="greeting.title"
           class="inline relative text-3xl font-medium md:text-4xl before:beforeTitle after:afterTitle"
         >
           Salutul Bisericii
@@ -1038,11 +1078,11 @@
             <div
               class="m-auto font-serif bg-white bg-opacity-60 rounded-xl text-gray-500 md:w-1/2 p-2"
             >
-              <p class="text-center p-6 text-2xl italic">
+              <p data-lng="greeting.verse" class="text-center p-6 text-2xl italic">
                 "Fiți binecuvântați de Domnul, care a făcut cerurile și
                 pământul!"
               </p>
-              <p class="text-right">Psalmul 115:15</p>
+              <p data-lng="greeting.reference" class="text-right">Psalmul 115:15</p>
             </div>
           </div>
         </div>
@@ -1054,6 +1094,7 @@
           rel="noopener"
           class="mt-10 mx-auto flex w-fit items-center gap-2 text-gray-600 hover:text-yellow-600"
           title="Urmăriți-ne pe Instagram"
+          data-lng-title="footer.instagram"
         >
           <svg
             class="w-6 h-6"
@@ -1072,7 +1113,9 @@
         </a>
         <p class="text-center text-sm text-gray-500 mx-8 mb-8 mt-4">
           © 2022 - <span id="current-year">2022</span>
-          Biserica Creștină Penticostală "Elim" | Toate drepturile rezervate
+          <span data-lng="footer.rights"
+            >Biserica Creștină Penticostală "Elim" | Toate drepturile rezervate</span
+          >
         </p>
       </div>
     </footer>

@@ -1,3 +1,5 @@
+import { t, onLanguageChange } from "./i18n.js?v=5";
+
 // Evenimente carousel. The posters are listed in index.html, newest first.
 // Swiping and trackpads use the browser's native scroll snapping; this adds
 // the arrows, dots, counter, keyboard support and clicking on a side poster.
@@ -13,11 +15,19 @@ export function initEventsCarousel(root) {
     const dot = document.createElement("button");
     dot.type = "button";
     dot.className = "events-dot";
-    dot.setAttribute("aria-label", `Evenimentul ${i + 1} din ${slides.length}`);
     dot.addEventListener("click", () => goTo(i));
     root.querySelector("[data-events-dots]").append(dot);
     return dot;
   });
+  const labelDots = () =>
+    dots.forEach((dot, i) =>
+      dot.setAttribute(
+        "aria-label",
+        t("events.dot", "Evenimentul {n} din {total}", { n: i + 1, total: slides.length })
+      )
+    );
+  labelDots();
+  onLanguageChange(labelDots);
   let current = -1;
 
   function goTo(index) {

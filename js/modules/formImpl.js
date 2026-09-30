@@ -1,19 +1,24 @@
+import { t, onLanguageChange } from "./i18n.js?v=5";
+
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mqpangpy";
 const CAPTCHA_FIELD = "g-recaptcha-response";
 
-const CAPTCHA_ERROR = {
+// Messages are looked up when shown, so they follow the language switch
+const captchaError = () => ({
   field: "captcha",
-  message: "Va rugam, verificati ca nu sunteti un robot!",
-};
-const NETWORK_ERROR = {
-  message: "Mesajul nu a putut fi trimis. Verificati conexiunea la internet!",
-};
-const SEND_ERROR = {
-  message: "Mesajul nu a putut fi trimis. Incercati din nou!",
-};
+  message: t("form.error.captcha", "Va rugam, verificati ca nu sunteti un robot!"),
+});
+const networkError = () => ({
+  message: t("form.error.network", "Mesajul nu a putut fi trimis. Verificati conexiunea la internet!"),
+});
+const sendError = () => ({
+  message: t("form.error.send", "Mesajul nu a putut fi trimis. Incercati din nou!"),
+});
 
 export function initContactForm(form) {
   const view = createView();
+  // An error shown in the other language would be confusing, so clear it
+  onLanguageChange(() => view.clearErrors());
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -40,7 +45,7 @@ export function initContactForm(form) {
 
 // Returns the first problem as { field, message }, or null when the data is valid.
 export function validateContact(data) {
-  if (!data[CAPTCHA_FIELD]) return CAPTCHA_ERROR;
+  if (!data[CAPTCHA_FIELD]) return captchaError();
 
   return (
     validateName(data.name) ||
@@ -55,10 +60,10 @@ export function validateContact(data) {
 export function readFormspreeError(body) {
   const error = body.errors?.[0];
   if (error?.code?.includes("RECAPTCHA") || body.error?.includes("reCAPTCHA"))
-    return CAPTCHA_ERROR;
+    return captchaError();
 
   if (error?.message) return { field: error.field, message: error.message };
-  return SEND_ERROR;
+  return sendError();
 }
 
 async function sendToFormspree(data) {
@@ -73,34 +78,36 @@ async function sendToFormspree(data) {
       body: JSON.stringify(data),
     });
   } catch {
-    return NETWORK_ERROR;
+    return networkError();
   }
 
   if (response.ok) return null;
   return readFormspreeError(await response.json().catch(() => ({})));
 }
 
+const problem = (field, key, romanian) => ({ field, message: t(key, romanian) });
+
 function validateName(name) {
-  if (!name) return { field: "name", message: "Trebuie sa introduceti un Nume!" };
-  if (name.length <= 3) return { field: "name", message: "Numele este prea scurt!" };
+  if (!name) return problem("name", "form.error.nameRequired", "Trebuie sa introduceti un Nume!");
+  if (name.length <= 3) return problem("name", "form.error.nameShort", "Numele este prea scurt!");
 }
 
 function validateEmail(email) {
-  if (!email) return { field: "email", message: "Trebuie sa introduceti un email!" };
+  if (!email) return problem("email", "form.error.emailRequired", "Trebuie sa introduceti un email!");
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-    return { field: "email", message: "Introduceti o adresa de email corecta!" };
+    return problem("email", "form.error.emailInvalid", "Introduceti o adresa de email corecta!");
 }
 
 function validateTlf(tlf) {
-  if (!tlf) return { field: "tlf", message: "Trebuie sa introduceti un numar de Tlf!" };
+  if (!tlf) return problem("tlf", "form.error.tlfRequired", "Trebuie sa introduceti un numar de Tlf!");
   if (!/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/.test(tlf) || tlf.length < 9)
-    return { field: "tlf", message: "Introduceti un numar de Tlf. corect! Ex: 789456123" };
+    return problem("tlf", "form.error.tlfInvalid", "Introduceti un numar de Tlf. corect! Ex: 789456123");
 }
 
 function validateMessage(message) {
-  if (!message) return { field: "message", message: "Trebuie sa introduceti un mesaj!" };
-  if (message.length <= 5) return { field: "message", message: "Mesajul este prea scurt!" };
-  if (message.length >= 260) return { field: "message", message: "Mesajul este prea lung!" };
+  if (!message) return problem("message", "form.error.messageRequired", "Trebuie sa introduceti un mesaj!");
+  if (message.length <= 5) return problem("message", "form.error.messageShort", "Mesajul este prea scurt!");
+  if (message.length >= 260) return problem("message", "form.error.messageLong", "Mesajul este prea lung!");
 }
 
 // The only code that touches the page.
