@@ -155,7 +155,12 @@
     </nav>
     <main>
       <section>
-        <div id="default-carousel" class="relative" data-carousel="slide">
+        <div
+          id="default-carousel"
+          class="relative"
+          data-carousel="slide"
+          data-carousel-interval="6000"
+        >
           <div
             id="title"
             class="text-white absolute z-30 top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2"
@@ -331,7 +336,7 @@
         id="verset_zilnic"
         class="my-14 bg-[#e7bc5a] relative before:clipPathBefore after:clipPathAfter"
       >
-        <div class="p-2 w-1/2 m-auto text-center z-0">
+        <div class="p-2 px-6 w-full md:w-1/2 m-auto text-center z-0">
           <h2 class="mb-2 text-lg font-semibold">Versetul Zilei</h2>
           <p id="verseOfDay" class="italic">
             Fiindcă atât de mult a iubit Dumnezeu lumea, că a dat pe singurul
@@ -351,9 +356,9 @@
             >
               Despre noi
             </h2>
-            <p class="my-16">
+            <p class="my-16 max-w-3xl mx-auto leading-relaxed">
               Biserica Penticostală Elim din Tarancón își desfășoară activitatea
-              de mai bine de 15 ani, începând această lucrare cu scopul de-a
+              încă din anul 2001, începând această lucrare cu scopul de-a
               onora pe singurul Dumnezeu, cel care a trimis pe fiul său, Isus
               Hristos, ca să moară pentru păcatele întregii omeniri, dându-le în
               dar Viața Veșnică celor care vor crede în El. Biserica Elim se
@@ -361,7 +366,7 @@
               Dumnezeu!
             </p>
           </div>
-          <div>
+          <div class="max-w-3xl mx-auto w-full">
             <ol class="relative border-l border-gray-200">
               <li class="despre_noi mb-10 ml-6">
                 <span
@@ -386,11 +391,11 @@
                   Deschiderea bisericii
                 </h3>
                 <p
-                  class="block mb-2 text-sm font-normal leading-none text-gray-400"
+                  class="block mb-2 text-sm font-normal leading-none text-gray-500"
                 >
                   Anul 2001
                 </p>
-                <p class="mb-4 text-base font-normal text-gray-500">
+                <p class="mb-4 text-base font-normal text-gray-600 leading-relaxed">
                   Printre românii care se aflau în Tarancón și în satele
                   apropiate în preajma anului 2001, erau și un număr mic de
                   credincioși care duceau dorul de părtășie și întâlnire cu
@@ -430,11 +435,11 @@
                   Primul Botez
                 </h3>
                 <p
-                  class="block mb-2 text-sm font-normal leading-none text-gray-400"
+                  class="block mb-2 text-sm font-normal leading-none text-gray-500"
                 >
                   Anul 2003
                 </p>
-                <p class="mb-4 text-base font-normal text-gray-500">
+                <p class="mb-4 text-base font-normal text-gray-600 leading-relaxed">
                   Primul botez s-a desfășurat în râul Extremera în Iulie din
                   anul 2003. <br />
                   După care au mai urmat și altele prin care s-au adaus tot mai
@@ -465,11 +470,11 @@
                   Propasirea bisericii
                 </h3>
                 <p
-                  class="block mb-2 text-sm font-normal leading-none text-gray-400"
+                  class="block mb-2 text-sm font-normal leading-none text-gray-500"
                 >
                   Actualitate
                 </p>
-                <p class="mb-4 text-base font-normal text-gray-500">
+                <p class="mb-4 text-base font-normal text-gray-600 leading-relaxed">
                   Prin Harul Domnului, biserica crește în continuare și
                   desfășoară activități de studiu biblic, cântări cu diferite
                   grupe de copii și tineri, cântări cu orchestra, seară de
@@ -531,10 +536,10 @@
             Program
           </h2>
           <div
-            class="w-full m-auto mt-16 flex flex-col justify-center items-center flex-wrap xl:flex-row"
+            class="w-full m-auto mt-16 flex flex-col justify-center items-center flex-wrap xl:flex-row xl:items-stretch"
           >
             <div
-              class="p-4 w-full xl:w-1/5 h-64 rounded border border-[#9c5120] xl:border-r-transparent shadow-xl flex flex-col justify-center"
+              class="p-4 w-full xl:w-1/5 min-h-[16rem] rounded border border-[#9c5120] border-t-4 border-t-yellow-400 xl:border-r-transparent shadow-xl flex flex-col justify-center xl:justify-start xl:pt-6"
             >
               <h3 class="text-2xl mb-2 font-semibold">Marți</h3>
               <div class="pt-4">
@@ -561,7 +566,7 @@
               </div>
             </div>
             <div
-              class="p-4 w-full xl:w-1/5 h-64 rounded border border-[#9c5120] shadow-xl flex flex-col justify-center"
+              class="p-4 w-full xl:w-1/5 min-h-[16rem] rounded border border-[#9c5120] border-t-4 border-t-yellow-400 shadow-xl flex flex-col justify-center xl:justify-start xl:pt-6"
             >
               <h3 class="text-2xl mb-2 font-semibold">Joi</h3>
               <div class="pt-4">
@@ -588,7 +593,7 @@
               </div>
             </div>
             <div
-              class="p-4 w-full xl:w-1/5 h-64 rounded border border-[#9c5120] xl:border-l-transparent shadow-xl flex flex-col justify-center"
+              class="p-4 w-full xl:w-1/5 min-h-[16rem] rounded border border-[#9c5120] border-t-4 border-t-yellow-400 xl:border-l-transparent shadow-xl flex flex-col justify-center xl:justify-start xl:pt-6"
             >
               <h3 class="text-2xl mb-2 font-semibold">Duminică</h3>
               <div class="pt-4">
@@ -637,7 +642,7 @@
               </div>
             </div>
             <div
-              class="p-4 w-full xl:w-1/5 h-64 rounded border border-[#9c5120] xl:border-l-transparent shadow-xl flex flex-col justify-center"
+              class="p-4 w-full xl:w-1/5 min-h-[16rem] rounded border border-[#9c5120] border-t-4 border-t-yellow-400 xl:border-l-transparent shadow-xl flex flex-col justify-center xl:justify-start xl:pt-6"
             >
               <h3 class="text-2xl mb-2 font-semibold">Tineri & Copii</h3>
               <div class="flex flex-row justify-around">
@@ -776,7 +781,9 @@
               <div
                 class="py-2 flex flex-col-reverse justify-center md:justify-end items-center md:flex-row"
               >
-                <p>Tel. +34 610 542 465</p>
+                <a href="tel:+34610542465" class="hover:text-yellow-500 hover:underline"
+                  >Tel. +34 610 542 465</a
+                >
                 <div class="w-3 m-1">
                   <svg
                     xmlns="https://www.w3.org/2000/svg"
@@ -792,7 +799,11 @@
               <div
                 class="py-2 flex flex-col-reverse justify-center md:justify-end items-center pb-2 md:flex-row"
               >
-                <p>contact.elimtarancon@gmail.com</p>
+                <a
+                  href="mailto:contact.elimtarancon@gmail.com"
+                  class="hover:text-yellow-500 hover:underline"
+                  >contact.elimtarancon@gmail.com</a
+                >
                 <div class="w-3 m-1">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -898,7 +909,7 @@
                     <input
                       type="submit"
                       value="Trimite"
-                      class="border rounded p-3 cursor-pointer w-28 bg-yellow-400 text-center text-white hover:bg-yellow-500"
+                      class="border rounded p-3 cursor-pointer w-28 bg-yellow-500 font-semibold text-center text-white hover:bg-yellow-600"
                     />
                   </div>
                   <div class="relative">
