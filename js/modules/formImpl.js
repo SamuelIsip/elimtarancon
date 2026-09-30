@@ -43,7 +43,7 @@ async function sendToFormspree(data) {
   hideSubmitInfo();
   const result = await response.json().catch(() => ({}));
   const error = result.errors?.[0];
-  if (error?.code?.includes("RECAPTCHA"))
+  if (error?.code?.includes("RECAPTCHA") || result.error?.includes("reCAPTCHA"))
     return errorMessage("Va rugam, verificati ca nu sunteti un robot!", "captcha");
 
   return errorMessage(
