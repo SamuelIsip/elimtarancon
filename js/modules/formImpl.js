@@ -4,34 +4,52 @@ export async function submitForm(e) {
 
   if (dataValidation(data) == false) return false;
 
-  if ((await fetchUserData(data)) == false) return false;
+  if ((await sendToFormspree(data)) == false) return false;
 
-  // NOTE: the compiled code called `contactForm.reset()`, but `contactForm`
-  // is not defined in this module, so it threw a ReferenceError. Fixed here.
   e.target.reset();
 }
 
-async function fetchUserData(data) {
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mqpangpy";
+
+async function sendToFormspree(data) {
   toggleButton();
-  const response = await fetch(
-    "https://elim-spring-email.onrender.com/sendEmail",
-    {
+
+  let response;
+  try {
+    response = await fetch(FORMSPREE_ENDPOINT, {
       method: "POST",
-      cache: "no-cache",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
       body: JSON.stringify(data),
-    }
-  );
+    });
+  } catch {
+    hideSubmitInfo();
+    return errorMessage("Mesajul nu a putut fi trimis. Verificati conexiunea la internet!");
+  } finally {
+    // A reCAPTCHA token can only be verified once, so request a new one
+    grecaptcha.reset();
+  }
 
   if (response.ok) {
     toggleButton();
     setTimeout(() => {
       hideSubmitInfo();
     }, 5000);
-  } else {
-    hideSubmitInfo();
-    return errorMessage("Captcha Verification Failed!", "captcha");
+    return true;
   }
+
+  hideSubmitInfo();
+  const result = await response.json().catch(() => ({}));
+  const error = result.errors?.[0];
+  if (error?.code?.includes("RECAPTCHA"))
+    return errorMessage("Va rugam, verificati ca nu sunteti un robot!", "captcha");
+
+  return errorMessage(
+    error?.message || "Mesajul nu a putut fi trimis. Incercati din nou!",
+    error?.field
+  );
 }
 
 function dataValidation(data) {
@@ -99,7 +117,8 @@ function validateMessage(data) {
 }
 
 function errorMessage(message, idElement) {
-  document.getElementById(idElement).style.borderColor = "red";
+  const element = idElement && document.getElementById(idElement);
+  if (element) element.style.borderColor = "red";
   document.getElementById("message_error_container").style.display = "block";
   document.getElementById("error_message").innerText = message;
   return false;
